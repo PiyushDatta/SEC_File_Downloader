@@ -1,3 +1,4 @@
+
 """
 Only gets annual reports from SEC website for a given CIK/Company Name
 """
@@ -172,12 +173,12 @@ def get_line_number_company_name(cik_txt_file, company_name):
     :return: Integer
     """
 
-    counter = 1
+    line_counter = 0
 
-    with open(cik_txt_file) as myfile:
-        for line in myfile.readlines():
-            counter += 1
-            comp_name = str(line.rsplit(':')[0])
+    with open(cik_txt_file) as my_file:
+        for file_line in my_file.readlines():
+            line_counter += 1
+            comp_name = str(file_line.rsplit(':')[0])
             try:
                 if comp_name != "" and int(comp_name[0]) >= 0:
                     comp_name = comp_name.rsplit(" ")[1:]
@@ -185,12 +186,12 @@ def get_line_number_company_name(cik_txt_file, company_name):
                     comp_name = comp_name.strip('/')
                     comp_name = comp_name.strip()
                     if str(comp_name) == company_name:
-                        return counter
+                        return line_counter
             except ValueError:
                 comp_name = comp_name.strip('/')
                 comp_name = comp_name.strip()
                 if str(comp_name) == company_name:
-                    return counter
+                    return line_counter
 
     return "Not Found"
 
@@ -204,19 +205,18 @@ def get_line_number_cik_key(cik_txt_file, cik_key):
     :return: Integer
     """
 
-    counter = 1
-    cik_key = str(cik_key)
-    with open(cik_txt_file) as myfile:
-        for line in myfile.readlines():
-            try:
-                if line != "":
-                    cik_number = str(line.rsplit(':')[-2])
-                    if cik_number == cik_key:
-                        return counter
+    line_counter = 0
 
-                counter += 1
+    cik_key = str(cik_key)
+    with open(cik_txt_file) as my_file:
+        for file_line in my_file.readlines():
+            line_counter += 1
+            try:
+                cik_number = str(file_line.rsplit(':')[-2])
+                if cik_number == cik_key:
+                    return line_counter + 1
             except IndexError:
-                counter += 1
+                continue
 
     return "Not Found"
 
@@ -254,7 +254,7 @@ if __name__ == '__main__':
     with open(our_cik_txt) as myfile:
         for line in myfile.readlines():
             if counter == 35447:
-                print(get_single_company_name(our_cik_txt, 35436))
+                print(get_single_company_name(our_cik_txt, 35437))
                 break
             counter += 1
     print("=======================================")
