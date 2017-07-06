@@ -5,6 +5,9 @@ This is the database for pdf_file_scraper.
 
 import sqlite3
 import requests
+import csv
+import pandas.io.sql as sql
+import pandas as pd
 # Custom made python file, name company_information
 # This file is included on Github page
 from company_information import Company
@@ -63,7 +66,51 @@ def input_company_db_list():
     if batch:
         insert_multi_comps(batch)
 
-    print("==== Done uploading! ====")
+    print("==== Done inputting companies! ====")
+
+
+def update_company_db_list():
+    """
+    In case data gets missed, and we need to add particular data in.
+    Will update this after.
+
+    :return: None
+    """
+
+    # Line 4348-4351 don't translate, so we add them here
+    counter = 1
+    for line in sec_cik_url.iter_lines():
+        counter += 1
+        if 4347 < counter <= 4351:
+            curr_comp_name = str(line).rsplit(':')[0][2:]
+            conn_cursor.execute("UPDATE companies SET name = :name WHERE line_number = :line_number",
+                                {'line_number': counter,
+                                 'name': curr_comp_name,
+                                 })
+            conn.commit()
+
+        if counter > 4351:
+            break
+
+
+def translate_db_to_csv_file():
+    """
+    Make an csv file from the data in the database
+
+    :return: None
+    """
+
+    # Create an csv file from the data from the sql file
+    table = sql.read_sql('select * from companies', conn)
+    table.to_csv('sec__edgar_company_info.csv')
+
+    # Only keep these 3 column names
+    sql_csv = pd.read_csv('sec__edgar_company_info.csv')
+    # Change column names, for better clarity
+    sql_csv.columns = ['Del After', 'Line Number', 'Company Name', 'Company CIK Key']
+    keep_col = ['Line Number', 'Company Name', 'Company CIK Key']
+    new_f = sql_csv[keep_col]
+    new_f.to_csv("sec__edgar_company_info.csv", index=False)
 
 
 def insert_multi_comps(comps):
@@ -142,4 +189,6 @@ if __name__ == '__main__':
     # create_table()
     # input_company_db_list()
     # delete_all_sql_data()
+    # translate_db_to_csv_file()
+    # update_company_db_list()
     conn.close()
