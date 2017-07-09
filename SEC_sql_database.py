@@ -164,6 +164,23 @@ def get_company_by_cik_key(comp_cik_key):
     return conn_cursor.fetchall()
 
 
+def get_range_of_cik_keys(range_x, range_y):
+    """
+    Return a list of tuples, containing company details (line number, company name, and cik key).
+    The list will only contain company details in range x to range y, inclusive.
+
+    :param range_x: Integer
+    :param range_y: Integer
+    :return: List[(Integer, String, Integer)]
+    """
+    conn_cursor.execute("SELECT * FROM companies WHERE line_number BETWEEN "
+                        ":range_x AND :range_y",
+                        {'range_x': range_x,
+                         'range_y': range_y})
+
+    return conn_cursor.fetchall()
+
+
 def delete_all_sql_data():
     """
     WARNING, do not use, unless you are sure you want to
