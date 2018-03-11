@@ -2,4 +2,7 @@
 /wkhtmltopdf_config
 .idea
 /__pycache__
+/AnnualReports
+/Backup_db
+
 

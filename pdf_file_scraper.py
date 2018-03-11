@@ -3,11 +3,8 @@ Only gets annual reports from SEC website for a given CIK/Company Name
 """
 
 # Lib to obtain data from url
-<<<<<<< HEAD
-import argparse
 
-=======
->>>>>>> 25c89b92a5faeb21015b46e7525751a6c5bd10d3
+import argparse
 from company_information import Company
 import pdfkit
 from urllib import request
@@ -16,14 +13,14 @@ from selenium import webdriver
 from os import path, getcwd, makedirs
 import csv
 import requests
-<<<<<<< HEAD
 import sys
+
 # Get methods from SQL db file
 import SEC_sql_database as mySql
-=======
+
 # Get methods from SQL db file
 import SEC_sql_database as my_sql
->>>>>>> 25c89b92a5faeb21015b46e7525751a6c5bd10d3
+
 
 # Current site for CIK list (by SEC) as of June 23rd, 2017
 sec_cik_url = 'https://www.sec.gov/Archives/edgar/cik-lookup-data.txt'
@@ -33,6 +30,7 @@ curr_dir = getcwd()
 
 # Config file
 wkhtmltopdf_config_file = path.join(curr_dir, "wkhtmltopdf\\bin\\wkhtmltopdf.exe")
+
 # Variables to call/open the files
 download_sec_file_counter = 1
 our_cik_txt = 'CIK_List.txt'
@@ -44,7 +42,7 @@ if not path.exists(annual_report_folder):
     makedirs(annual_report_folder)
 
 
-<<<<<<< HEAD
+
 def get_platform():
     platforms = {
         'linux1': 'Linux',
@@ -62,8 +60,6 @@ def get_platform():
 curr_platform = get_platform()
 
 
-=======
->>>>>>> 25c89b92a5faeb21015b46e7525751a6c5bd10d3
 def get_range_cik_keys_from_db(range_x, range_y):
     """
     Return only the CIK keys of companies in range x to range y (inclusive) in a list
@@ -73,18 +69,14 @@ def get_range_cik_keys_from_db(range_x, range_y):
     :return: List[Integer]
     """
     res = list()
-<<<<<<< HEAD
-    for comp in mySql.get_range_of_cik_keys(range_x, range_y):
-=======
+
     for comp in my_sql.get_range_of_cik_keys(range_x, range_y):
->>>>>>> 25c89b92a5faeb21015b46e7525751a6c5bd10d3
         res.append(comp[-1])
 
     return res
 
 
 def get_single_company_from_cik(cik_key):
-<<<<<<< HEAD
     """
 
     :param cik_key: Integer
@@ -100,14 +92,7 @@ def get_single_company_from_name(company_name):
     :return: String
     """
     return mySql.get_company_by_name(company_name)
-=======
-    """
-
-    :param cik_key: Integer
-    :return: String
-    """
-    return my_sql.get_company_by_cik_key(cik_key)
->>>>>>> 25c89b92a5faeb21015b46e7525751a6c5bd10d3
+    
 
 
 def get_annual_reports_pdf(save_to_folder, cik_keys):
@@ -196,8 +181,6 @@ def download_sec_file(output_folder, url):
             break
 
     whole_link = sec_url + file_name
-<<<<<<< HEAD
-    print(whole_link)
     output_filename = file_name.split('/')[-1]
 
     # if output_filename.split('.')[-1] == "htm" or out.split('.')[-1] == "html":
@@ -205,13 +188,7 @@ def download_sec_file(output_folder, url):
     config = pdfkit.configuration(wkhtmltopdf=wkhtmltopdf_config_file)
     # config = pdfkit.configuration(wkhtmltopdf=
     #                               r"C:\Users\Piyush\Documents\Programming\SEC_file_downloader\wkhtmltopdf_config\Windows\wkhtmltox-0.12.4_msvc2015-win32.exe")
-=======
     output_filename = file_name.split('/')[-1]
-
-    # if output_filename.split('.')[-1] == "htm" or out.split('.')[-1] == "html":
-    config = pdfkit.configuration(wkhtmltopdf=r"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe")
->>>>>>> 25c89b92a5faeb21015b46e7525751a6c5bd10d3
-    output_filename = output_filename.split('.')[0]
 
     if len(output_filename) >= 4:
         try:
@@ -251,8 +228,6 @@ def download_url_non_pdf_format(save_folder, whole_link, file_name):
     :param file_name:
     :return:
     """
-<<<<<<< HEAD
-
     response = requests.get(whole_link, stream=True)
 
     # Throw an error for bad status codes
