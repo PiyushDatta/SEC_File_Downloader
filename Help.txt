@@ -1,0 +1,16 @@
+## Running the program
+
+1. Open up your terminal, and change directory to the location 
+of this application, example: cd "PATH_TO_FILE/SEC_file_downloader"
+
+2. Make sure you have installed python
+
+3. Make sure to go to wkhtmltopdf_config, and 
+download the wkhtmltopdf.exe for your OS system
+
+4. Make sure to download wkhtmltopdf to the same directory to the same 
+folder as this application, so same folder as 
+"PATH_TO_FILE/SEC_file_downloader"
+
+5. Run pdf_file_scraper.py. 
+Example: "python pdf_file_scraper.py --cik_key=320193"

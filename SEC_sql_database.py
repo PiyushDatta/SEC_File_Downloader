@@ -2,15 +2,14 @@
 The SQL database to keep track of CIK keys, Company names, etc. from the SEC website.
 This is the database for pdf_file_scraper.
 """
-
+import argparse
 import sqlite3
-import requests
-import csv
-import pandas.io.sql as sql
 import pandas as pd
+import pandas.io.sql as sql
+import requests
+
 # Custom made python file, name company_information
 # This file is included on Github page
-from company_information import Company
 
 # Set up cursor and connection to interact with database
 conn = sqlite3.connect('sec_info.db')
@@ -37,6 +36,7 @@ def input_company_db_list():
     """
     counter = 0
     batch = list()
+
     # Number of companies to dump into db at once
     batch_size = 2000
 
@@ -52,7 +52,7 @@ def input_company_db_list():
         curr_comp_name = str(line).rsplit(':')[0][2:]
         curr_comp_cik = str(line).rsplit(':')[-2]
         counter += 1
-        print(counter, curr_comp_name, curr_comp_cik)
+        # print(counter, curr_comp_name, curr_comp_cik)
         # insert_company(counter, curr_comp)
 
         # Create object of the line
@@ -161,6 +161,23 @@ def get_company_by_cik_key(comp_cik_key):
                         "cik_key=:cik_key",
                         {'cik_key': comp_cik_key}
                         )
+    return conn_cursor.fetchall()
+
+
+def get_range_of_cik_keys(range_x, range_y):
+    """
+    Return a list of tuples, containing company details (line number, company name, and cik key).
+    The list will only contain company details in range x to range y, inclusive.
+
+    :param range_x: Integer
+    :param range_y: Integer
+    :return: List[(Integer, String, Integer)]
+    """
+    conn_cursor.execute("SELECT * FROM companies WHERE line_number BETWEEN "
+                        ":range_x AND :range_y",
+                        {'range_x': range_x,
+                         'range_y': range_y})
+
     return conn_cursor.fetchall()
 
 

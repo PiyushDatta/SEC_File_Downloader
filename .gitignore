@@ -1,0 +1,5 @@
+/wkhtmltopdf
+/wkhtmltopdf_config
+.idea
+/__pycache__
+
