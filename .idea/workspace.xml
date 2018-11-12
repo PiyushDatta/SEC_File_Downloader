@@ -1,7 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c74ea74-ebe4-417d-a87d-4c9a0737a091" name="Default" comment="" />
+    <list default="true" id="6c74ea74-ebe4-417d-a87d-4c9a0737a091" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/SEC_file_downloader.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SEC_file_downloader.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ACTUANTCORP/ACTUANTCORP_10k_0001.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ACTUANTCORP/ACTUANTCORP_10k_2013.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ACTUANTCORP/ACTUANTCORP_10k_2014.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ACTUANTCORP/ACTUANTCORP_10k_2015.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ACTUANTCORP/ACTUANTCORP_10k_2016.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ACTUANTCORP/ACTUANTCORP_10k_UNKNOWN_DATE_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ACTUANTCORP/ACTUANTCORP_10k_UNKNOWN_DATE_10.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ACTUANTCORP/ACTUANTCORP_10k_UNKNOWN_DATE_11.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ACTUANTCORP/ACTUANTCORP_10k_UNKNOWN_DATE_12.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ACTUANTCORP/ACTUANTCORP_10k_UNKNOWN_DATE_13.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ACTUANTCORP/ACTUANTCORP_10k_UNKNOWN_DATE_14.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ACTUANTCORP/ACTUANTCORP_10k_UNKNOWN_DATE_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ACTUANTCORP/ACTUANTCORP_10k_UNKNOWN_DATE_3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ACTUANTCORP/ACTUANTCORP_10k_UNKNOWN_DATE_4.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ACTUANTCORP/ACTUANTCORP_10k_UNKNOWN_DATE_5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ACTUANTCORP/ACTUANTCORP_10k_UNKNOWN_DATE_6.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ACTUANTCORP/ACTUANTCORP_10k_UNKNOWN_DATE_7.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ACTUANTCORP/ACTUANTCORP_10k_UNKNOWN_DATE_8.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ACTUANTCORP/ACTUANTCORP_10k_UNKNOWN_DATE_9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ACTUANTCORP/ACTUANTCORP_DIRECTORY_LIST_IGNORE.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ActuaCorp/ActuaCorp_10k_1231.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ActuaCorp/ActuaCorp_10k_2015.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ActuaCorp/ActuaCorp_10k_2016.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ActuaCorp/ActuaCorp_10k_UNKNOWN_DATE_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ActuaCorp/ActuaCorp_10k_UNKNOWN_DATE_10.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ActuaCorp/ActuaCorp_10k_UNKNOWN_DATE_11.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ActuaCorp/ActuaCorp_10k_UNKNOWN_DATE_12.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ActuaCorp/ActuaCorp_10k_UNKNOWN_DATE_13.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ActuaCorp/ActuaCorp_10k_UNKNOWN_DATE_14.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ActuaCorp/ActuaCorp_10k_UNKNOWN_DATE_15.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ActuaCorp/ActuaCorp_10k_UNKNOWN_DATE_16.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ActuaCorp/ActuaCorp_10k_UNKNOWN_DATE_17.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ActuaCorp/ActuaCorp_10k_UNKNOWN_DATE_18.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ActuaCorp/ActuaCorp_10k_UNKNOWN_DATE_19.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ActuaCorp/ActuaCorp_10k_UNKNOWN_DATE_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ActuaCorp/ActuaCorp_10k_UNKNOWN_DATE_20.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ActuaCorp/ActuaCorp_10k_UNKNOWN_DATE_21.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ActuaCorp/ActuaCorp_10k_UNKNOWN_DATE_22.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ActuaCorp/ActuaCorp_10k_UNKNOWN_DATE_3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ActuaCorp/ActuaCorp_10k_UNKNOWN_DATE_4.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ActuaCorp/ActuaCorp_10k_UNKNOWN_DATE_5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ActuaCorp/ActuaCorp_10k_UNKNOWN_DATE_6.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ActuaCorp/ActuaCorp_10k_UNKNOWN_DATE_7.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ActuaCorp/ActuaCorp_10k_UNKNOWN_DATE_8.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ActuaCorp/ActuaCorp_10k_UNKNOWN_DATE_9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/ActuaCorp/ActuaCorp_DIRECTORY_LIST_IGNORE.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnualReports/testing_01.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CIK_List.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CIK_List.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEC_sql_database.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppComponents/SEC_sql_database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/company_information.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppComponents/company_information.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf_file_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppComponents/pdf_file_scraper.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,42 +68,194 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="company_information.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AppComponents/company_information.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="pdf_file_scraper.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AppComponents/pdf_file_scraper.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1998">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AppComponents/User.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ObserverInterface.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Observers/ObserverInterface.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChangeDirectoryGUI.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AppGUI/PopUpWindow/ChangeDirectoryGUI.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-569">
+              <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainGUI.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AppGUI/MainGUI.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DirectoryObserver.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Observers/DirectoryObserver.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="81">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ans</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/AppGUI/ChangeDirectoryGUI.py" />
+        <option value="$PROJECT_DIR$/pdf_file_scraper.py" />
+        <option value="$PROJECT_DIR$/AppComponents/pdf_file_scraper.py" />
+        <option value="$PROJECT_DIR$/AppGUI/PopUpWindow/ChangeDirectoryGUI.py" />
+        <option value="$PROJECT_DIR$/Observers/ObserverInterface.py" />
+        <option value="$PROJECT_DIR$/AppComponents/User.py" />
+        <option value="$PROJECT_DIR$/AppGUI/MainGUI.py" />
+        <option value="$PROJECT_DIR$/Observers/DirectoryObserver.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1939" />
+    <option name="height" value="1059" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SEC_file_downloader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEC_file_downloader" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEC_file_downloader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEC_file_downloader" type="462c0819:PsiDirectoryNode" />
+              <item name="AppComponents" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEC_file_downloader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEC_file_downloader" type="462c0819:PsiDirectoryNode" />
+              <item name="AppGUI" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\PD\Documents\Piyush\aaaProgramming\SEC_file_downloader\AppComponents" />
+      <recent name="C:\Users\PD\Documents\Piyush\aaaProgramming\SEC_file_downloader\AppGUI\PopUpWindow" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="MainGUI" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="SEC_file_downloader" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/AppGUI" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AppGUI/MainGUI.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.MainGUI" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -60,33 +268,133 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14127605" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32965517" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
-    <watches-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/AppComponents/company_information.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppComponents/pdf_file_scraper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppGUI/MainGUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppComponents/company_information.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppComponents/pdf_file_scraper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppGUI/MainGUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppGUI/PopUpWindow/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppComponents/company_information.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppComponents/pdf_file_scraper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1998">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Observers/ObserverInterface.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppComponents/User.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppGUI/PopUpWindow/ChangeDirectoryGUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-569">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppGUI/MainGUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Observers/DirectoryObserver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
