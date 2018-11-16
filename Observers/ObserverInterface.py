@@ -12,5 +12,5 @@ class Observer(metaclass=abc.ABCMeta):
         self._directory_state = None
 
     @abc.abstractmethod
-    def update(self, arg):
+    def update(self, new_dir):
         pass
