@@ -66,27 +66,30 @@ class MainGUIApp:
     def home_page(self):
         # Have a text for current directory, pad y by 20, and set anchor to w (west)
         if self.current_directory is None:
-            current_directory_text = Label(self.window, text="Current Directory:   No directory assigned",
+            current_directory_text = Label(self.window,
+                                           text="Current Directory:" + '                               '
+                                                + "No directory assigned",
                                            font=("Helvetica", 12), anchor='w', pady=20)
         else:
-            current_directory_text = Label(self.window, text="Current Directory:   " + self.current_directory,
+            current_directory_text = Label(self.window,
+                                           text="Current Directory:" + '                               '
+                                                + self.current_directory,
                                            font=("Helvetica", 12), anchor='w', pady=20)
-        current_directory_text.grid(column=0, row=0)
+        current_directory_text.grid(row=0, sticky="w")
 
         # Search SEC company listings
-        search_company_text = Label(self.window, text="Search SEC company directory: ", font=("Helvetica", 12),
-                                    anchor='nw')
-        search_company_text.grid(column=0, row=1, columnspan=3, sticky='W')
+        search_company_text = Label(self.window, text="Search SEC company directory: ", font=("Helvetica", 12))
+        search_company_text.grid(row=1, sticky="w")
 
         # Drop down for searching SEC company listings
         SEC_COMPANY_LISTINGS = ['APPL', "FB "]
-        search_company_dropdown = AutocompleteEntry(SEC_COMPANY_LISTINGS, self.window)
+        search_company_dropdown = AutocompleteEntry(SEC_COMPANY_LISTINGS, self.window, width=100)
         # search_company_dropdown.bind('<Return>', MainGUIApp.get_StringVar_enter_key)
-        search_company_dropdown.grid(column=1, row=1, sticky='W')
+        search_company_dropdown.grid(row=1, padx=(250, 0))
 
         # Enter button to select the company
-        search_company_button = Button(self.window, text="Search", command=print("click!"), height=1)
-        search_company_button.grid(column=2, row=1, sticky='W', padx=10)
+        search_company_button = Button(self.window, text="Search", command=print("click!"), height=1, width=15)
+        search_company_button.grid(column=2, row=1, padx=10)
 
     def main_menu_bar(self):
         menu_bar = Menu(self.window)
