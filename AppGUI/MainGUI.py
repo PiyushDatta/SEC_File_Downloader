@@ -2,10 +2,12 @@
 import os
 import pickle
 import sys
-from tkinter import Tk, Menu, Label, StringVar, OptionMenu, Entry, Button, messagebox
+from tkinter import Tk, Menu, Label, StringVar, OptionMenu, Entry, Button, messagebox, Canvas, HORIZONTAL
+from tkinter.ttk import Separator
 
 from AppGUI.PopUpWindow import ChangeDirectoryGUI
 from AppComponents.User import CurrentUser
+from AppComponents import SECCompanyList
 from Observers import DirectoryObserver
 from AppGUI.AutoCompleteDropdownList import AutocompleteEntry
 
@@ -87,16 +89,28 @@ class MainGUIApp(Tk):
         search_company_text.grid(row=1, sticky="w")
 
         # Drop down for searching SEC company listings
-        SEC_COMPANY_LISTINGS = ['APPL', "FB "]
-        search_company_dropdown = AutocompleteEntry(SEC_COMPANY_LISTINGS, self, width=100)
+        db_downloader = SECCompanyList.CompanyList()
+        db_downloader.update_list_from_db()
+        SEC_COMPANY_LISTINGS = db_downloader.get_company_name_list()
+
+        # search_company_dropdown = AutocompleteEntry(SEC_COMPANY_LISTINGS, self, width=100)
+        search_company_dropdown = Entry(self, width=100)
         search_company_dropdown.grid(row=1, padx=(250, 0))
 
         # Enter button to select the company
         search_company_button = Button(self, text="Search",
-                                       command=lambda: self.get_entry_text(search_company_dropdown.get()),
+                                       command=lambda: self.get_entry_text(search_company_dropdown.get(),
+                                                                           SEC_COMPANY_LISTINGS),
                                        height=1,
                                        width=15)
-        search_company_button.grid(column=2, row=1, padx=10)
+        search_company_button.grid(column=2, row=1, padx=10, pady=(0, 5))
+
+        # w = Canvas(self, width=200, height=100)
+        # w.create_line(0, 0, 200, 100)
+        horizontal_line_sep = Separator(self, orient=HORIZONTAL)
+        horizontal_line_sep.grid(row=4, columnspan=5, sticky="ew")
+        # horizontal_line_sep.grid_rowconfigure(0, weight=0)
+        # horizontal_line_sep.grid_columnconfigure(0, weight=0)
 
     def main_menu_bar(self):
         menu_bar = Menu(self)
@@ -156,9 +170,10 @@ class MainGUIApp(Tk):
             if observer is isinstance(observer, DirectoryObserver.CurrentDirectoryObserver):
                 self.current_directory = observer.get_directory()
 
-    def get_entry_text(self, chosen_company_str):
-        self.current_company = chosen_company_str
-        print(self.current_company)
+    def get_entry_text(self, chosen_company_str, company_listing):
+        print("Chosen company: " + chosen_company_str)
+        if chosen_company_str in company_listing and chosen_company_str:
+            self.current_company = chosen_company_str
 
     def testing_print_user_settings(self):
         print(self.current_directory)
@@ -170,7 +185,6 @@ def main():
     # directory_observer = DirectoryObserver.CurrentDirectoryObserver()
     # main_window.attach_observer(directory_observer)
     main_window.mainloop()
-    main
 
 
 if __name__ == '__main__':
