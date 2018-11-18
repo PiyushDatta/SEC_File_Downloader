@@ -2,12 +2,12 @@
 import os
 import pickle
 import sys
-from tkinter import Tk, Menu
-
+from tkinter import Tk, Menu, Label, StringVar, OptionMenu, Entry, Button
 
 from AppGUI.PopUpWindow import ChangeDirectoryGUI
 from AppComponents.User import CurrentUser
 from Observers import DirectoryObserver
+from AppGUI.AutoCompleteDropdownList import AutocompleteEntry
 
 
 # Remember that this window runs in the ./AppGui folder, so any assets should be in there Naming convention by
@@ -39,7 +39,10 @@ class MainGUIApp:
         self.load_user_details()
 
         # Set current directory as user's last directory, if None then directory will be none
-        self.current_directory = None
+        self.current_directory = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
+
+        # Set chosen company to display to None until initialized
+        self.chosen_company = None
 
         # Set change directory window/dialog to None until initialized
         self.change_directory_dialog = None
@@ -54,19 +57,36 @@ class MainGUIApp:
         # Update DirectoryObserver
         self._notify_observer()
 
-
         # Set main menu bar and home page
         self.main_menu_bar()
-        # self.home_page()
+        self.home_page()
 
         # self.change_directory_dialog.closeEvent(self.update_from_observer())
 
-    # def home_page(self):
-    #     quit_button = QtGui.QPushButton("Quit", self)
-    #     quit_button.clicked[bool].connect(self.close_application)
-    #     quit_button.resize(quit_button.minimumSizeHint())
-    #     quit_button.move(0, 0)
-    #     self.show()
+    def home_page(self):
+        # Have a text for current directory, pad y by 20, and set anchor to w (west)
+        if self.current_directory is None:
+            current_directory_text = Label(self.window, text="Current Directory:   No directory assigned",
+                                           font=("Helvetica", 12), anchor='w', pady=20)
+        else:
+            current_directory_text = Label(self.window, text="Current Directory:   " + self.current_directory,
+                                           font=("Helvetica", 12), anchor='w', pady=20)
+        current_directory_text.grid(column=0, row=0)
+
+        # Search SEC company listings
+        search_company_text = Label(self.window, text="Search SEC company directory: ", font=("Helvetica", 12),
+                                    anchor='nw')
+        search_company_text.grid(column=0, row=1, columnspan=3, sticky='W')
+
+        # Drop down for searching SEC company listings
+        SEC_COMPANY_LISTINGS = ['APPL', "FB "]
+        search_company_dropdown = AutocompleteEntry(SEC_COMPANY_LISTINGS, self.window)
+        # search_company_dropdown.bind('<Return>', MainGUIApp.get_StringVar_enter_key)
+        search_company_dropdown.grid(column=1, row=1, sticky='W')
+
+        # Enter button to select the company
+        search_company_button = Button(self.window, text="Search", command=print("click!"), height=1)
+        search_company_button.grid(column=2, row=1, sticky='W', padx=10)
 
     def main_menu_bar(self):
         menu_bar = Menu(self.window)
@@ -77,28 +97,6 @@ class MainGUIApp:
 
         # display the menu
         self.window.config(menu=menu_bar)
-        # root.config(menu=menubar)
-        # menu_bar = root.Menu(self.window.master)
-        # roo.fram.master.config(menu=menu_bar)
-        #
-
-        # Quit the application
-        # file_menu.add_command(label="Exit", command=self.onExit)
-        #
-        # quit_app_action.setShortcut("Ctrl+Q")
-        # quit_app_action.setStatusTip('Save and quit the application')
-        # quit_app_action.triggered.connect(self.close_application)
-
-        # Change directory to save your files
-        # change_dir_action = QtGui.QAction("&Change Directory", self)
-        # change_dir_action.setShortcut("Ctrl+P")
-        # change_dir_action.setStatusTip('Choose where to save your files')
-        # change_dir_action.triggered.connect(self.show_change_directory_gui)
-        #
-        # file_menu.addAction(change_dir_action)
-        # file_menu.addAction(quit_app_action)
-
-        # self.show()
 
     def show_change_directory_gui(self):
         # Initialize ChangeDirectoryGUI if user wants to open that window
@@ -121,6 +119,7 @@ class MainGUIApp:
 
     def save_user_details(self):
         self.current_user.set_current_directory(self.current_directory)
+        self.current_user.set_chosen_company(self.chosen_company)
         with open(self._pickle_file, 'wb') as f:
             pickle.dump(self.current_user, f)
 
@@ -147,7 +146,7 @@ class MainGUIApp:
 
 
 def main():
-    main_window = MainGUIApp("SEC Edgar File Downloader", 900, 600)
+    main_window = MainGUIApp("SEC Edgar File Downloader", 1000, 600)
     # directory_observer = DirectoryObserver.CurrentDirectoryObserver()
     # main_window.attach_observer(directory_observer)
     main_window.window.mainloop()
