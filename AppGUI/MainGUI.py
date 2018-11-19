@@ -70,6 +70,10 @@ class MainGUIApp(Tk):
         self.home_page()
         self.company_information()
 
+        # Display current company selection
+        self.search_company_text = Label(self, text=self.current_company, font=("Helvetica", 12), justify='center')
+        self.search_company_text.grid(row=5, padx=(30, 0), pady=10)
+
         # Closing app
         self.protocol("WM_DELETE_WINDOW", self.close_application)
 
@@ -90,8 +94,8 @@ class MainGUIApp(Tk):
         current_directory_text.grid(row=0, sticky="w")
 
         # Search SEC company listings
-        search_company_text = Label(self, text="Search SEC company directory: ", font=("Helvetica", 12))
-        search_company_text.grid(row=1, sticky="w")
+        self.search_company_text = Label(self, text="Search SEC company directory: ", font=("Helvetica", 12))
+        self.search_company_text.grid(row=1, sticky="w")
 
         # Drop down for searching SEC company listings
         db_downloader = SECCompanyList.CompanyList()
@@ -106,8 +110,7 @@ class MainGUIApp(Tk):
 
         # Enter button to select the company
         search_company_button = Button(self, text="Search",
-                                       command=lambda: self.get_entry_text(search_company_dropdown.get(),
-                                                                           SEC_COMPANY_LISTINGS),
+                                       command=lambda: self.get_entry_text(search_company_dropdown.get()),
                                        height=1,
                                        width=15)
         search_company_button.grid(column=2, row=1, padx=10, pady=(0, 5))
@@ -117,9 +120,6 @@ class MainGUIApp(Tk):
         horizontal_line_sep.grid(row=4, columnspan=5, sticky="ew")
 
     def company_information(self):
-        # Display current company selection
-        search_company_text = Label(self, text=self.current_company, font=("Helvetica", 12), justify='center')
-        search_company_text.grid(row=5, padx=(30, 0), pady=10)
 
         # Initialize our SEC EDGAR file downloader
         sec_file_downloader = FileDownloader(self.current_directory, self.current_company)
@@ -188,64 +188,40 @@ class MainGUIApp(Tk):
             if observer is isinstance(observer, DirectoryObserver.CurrentDirectoryObserver):
                 self.current_directory = observer.get_directory()
 
-    def get_entry_text(self, chosen_company_str, company_listing):
+    def get_entry_text(self, chosen_company_str):
         print("Chosen company: " + chosen_company_str)
-        # https://www.sec.gov/cgi-bin/browse-edgar?CIK=qwe&owner=exclude&action=getcompany
 
-        base_url = "https://www.sec.gov/cgi-bin/browse-edgar?CIK=" + str(
+        cik_url = "https://www.sec.gov/cgi-bin/browse-edgar?CIK=" + str(
             chosen_company_str) + "&owner=exclude&action=getcompany"
-        # QWE
-        # <!-- END HEADER -->
-        #
-        # <img src="/images/pixel.gif" width="652" height="1" border="0" alt="">
-        # </td></tr></table><br>
-        # <div style="margin-left: 10px">
-        # <p><center><h1>No matching Ticker Symbol.</h1></center></p>
-        # </table>
 
-        #aapl
-    #     < div
-    #
-    #     class ="companyInfo" >
-    #
-    #     < span
-    #
-    #     class ="companyName" > APPLE INC < acronym title="Central Index Key" > CIK < / acronym >  #: <a href="/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0000320193&amp;owner=exclude&amp;count=40">0000320193 (see all company filings)</a></span>
-    #
-    #     < p
-    #
-    #     class ="identInfo" > < acronym title="Standard Industrial Code" > SIC < / acronym >: <
-    #
-    #         a
-    #     href = "/cgi-bin/browse-edgar?action=getcompany&amp;SIC=3571&amp;owner=exclude&amp;count=40" > 3571 < / a > - ELECTRONIC
-    #     COMPUTERS < br / > State
-    #     location: < a
-    #     href = "/cgi-bin/browse-edgar?action=getcompany&amp;State=CA&amp;owner=exclude&amp;count=40" > CA < / a > | State
-    #     of
-    #     Inc.: < strong > CA < / strong > | Fiscal
-    #     Year
-    #     End: 0
-    #     930 < br / > formerly: APPLE
-    #     COMPUTER
-    #     INC(filings
-    #     through
-    #     2007 - 01 - 04) < br / > formerly: APPLE
-    #     COMPUTER
-    #     INC / FA(filings
-    #     through
-    #     1997 - 07 - 28) < br / > (Assistant Director Office: 3) < br / > Get < a
-    #     href = "/cgi-bin/own-disp?action=getissuer&amp;CIK=0000320193" > < b > insider
-    #     transactions < / b > < / a >
-    #     for this < b > issuer </ b >.
-    #
-    # < / p >
-    # < / div >
-        page = requests.get(base_url)
+        # SEC doesn't use spaces, they use the + sign in place of any spaces
+        chosen_company_str.replace(" ", "+")
+
+        company_name_url = "https://www.sec.gov/cgi-bin/browse-edgar?company=" + str(
+            chosen_company_str) + "&owner=exclude&action=getcompany"
+
+        company_name = []
+
+        page = requests.get(cik_url)
         tree = html.fromstring(page.content)
         company_name = tree.xpath('//span[@class="companyName"]/text()')
-        print(company_name)
+
+        if not company_name:
+            page = requests.get(company_name_url)
+            tree = html.fromstring(page.content)
+            company_name = tree.xpath('//span[@class="companyName"]/text()')
+            if not company_name:
+                self.update_current_company("No company selected / Wrong company name selected")
+                return
+
+        print(company_name[0])
+        self.update_current_company(company_name[0])
         # if chosen_company_str in company_listing and chosen_company_str:
         #     self.current_company = chosen_company_str
+
+    def update_current_company(self, new_company):
+        self.current_company = new_company
+        self.search_company_text.config(text=self.current_company)
 
     def testing_print_user_settings(self):
         print(self.current_directory)
