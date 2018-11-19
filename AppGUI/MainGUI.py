@@ -5,9 +5,13 @@ import sys
 from tkinter import Tk, Menu, Label, StringVar, OptionMenu, Entry, Button, messagebox, Canvas, HORIZONTAL
 from tkinter.ttk import Separator
 
+import requests
+from lxml import html
+
 from AppGUI.PopUpWindow import ChangeDirectoryGUI
 from AppComponents.User import CurrentUser
 from AppComponents import SECCompanyList
+from AppComponents.SECFileDownloader import FileDownloader
 from Observers import DirectoryObserver
 from AppGUI.AutoCompleteDropdownList import AutocompleteEntry
 
@@ -64,6 +68,7 @@ class MainGUIApp(Tk):
         # Set main menu bar and home page
         self.main_menu_bar()
         self.home_page()
+        self.company_information()
 
         # Closing app
         self.protocol("WM_DELETE_WINDOW", self.close_application)
@@ -94,7 +99,9 @@ class MainGUIApp(Tk):
         SEC_COMPANY_LISTINGS = db_downloader.get_company_name_list()
 
         # search_company_dropdown = AutocompleteEntry(SEC_COMPANY_LISTINGS, self, width=100)
-        search_company_dropdown = Entry(self, width=100)
+        inputted_text = StringVar()
+        search_company_dropdown = Entry(self, width=100, textvariable=inputted_text)
+        inputted_text.trace("w", lambda *_, var=inputted_text: self.autocapitalize_stringvar(var))
         search_company_dropdown.grid(row=1, padx=(250, 0))
 
         # Enter button to select the company
@@ -105,12 +112,23 @@ class MainGUIApp(Tk):
                                        width=15)
         search_company_button.grid(column=2, row=1, padx=10, pady=(0, 5))
 
-        # w = Canvas(self, width=200, height=100)
-        # w.create_line(0, 0, 200, 100)
+        # Horizontal line separator
         horizontal_line_sep = Separator(self, orient=HORIZONTAL)
         horizontal_line_sep.grid(row=4, columnspan=5, sticky="ew")
-        # horizontal_line_sep.grid_rowconfigure(0, weight=0)
-        # horizontal_line_sep.grid_columnconfigure(0, weight=0)
+
+    def company_information(self):
+        # Display current company selection
+        search_company_text = Label(self, text=self.current_company, font=("Helvetica", 12), justify='center')
+        search_company_text.grid(row=5, padx=(30, 0), pady=10)
+
+        # Initialize our SEC EDGAR file downloader
+        sec_file_downloader = FileDownloader(self.current_directory, self.current_company)
+
+        #
+        # ten_k_annual_reports_downloader = Button(self, text="Search",
+        #                                command=lambda: sec_file_downloader.down
+        #                                height=1,
+        #                                width=15)
 
     def main_menu_bar(self):
         menu_bar = Menu(self)
@@ -172,12 +190,70 @@ class MainGUIApp(Tk):
 
     def get_entry_text(self, chosen_company_str, company_listing):
         print("Chosen company: " + chosen_company_str)
-        if chosen_company_str in company_listing and chosen_company_str:
-            self.current_company = chosen_company_str
+        # https://www.sec.gov/cgi-bin/browse-edgar?CIK=qwe&owner=exclude&action=getcompany
+
+        base_url = "https://www.sec.gov/cgi-bin/browse-edgar?CIK=" + str(
+            chosen_company_str) + "&owner=exclude&action=getcompany"
+        # QWE
+        # <!-- END HEADER -->
+        #
+        # <img src="/images/pixel.gif" width="652" height="1" border="0" alt="">
+        # </td></tr></table><br>
+        # <div style="margin-left: 10px">
+        # <p><center><h1>No matching Ticker Symbol.</h1></center></p>
+        # </table>
+
+        #aapl
+    #     < div
+    #
+    #     class ="companyInfo" >
+    #
+    #     < span
+    #
+    #     class ="companyName" > APPLE INC < acronym title="Central Index Key" > CIK < / acronym >  #: <a href="/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0000320193&amp;owner=exclude&amp;count=40">0000320193 (see all company filings)</a></span>
+    #
+    #     < p
+    #
+    #     class ="identInfo" > < acronym title="Standard Industrial Code" > SIC < / acronym >: <
+    #
+    #         a
+    #     href = "/cgi-bin/browse-edgar?action=getcompany&amp;SIC=3571&amp;owner=exclude&amp;count=40" > 3571 < / a > - ELECTRONIC
+    #     COMPUTERS < br / > State
+    #     location: < a
+    #     href = "/cgi-bin/browse-edgar?action=getcompany&amp;State=CA&amp;owner=exclude&amp;count=40" > CA < / a > | State
+    #     of
+    #     Inc.: < strong > CA < / strong > | Fiscal
+    #     Year
+    #     End: 0
+    #     930 < br / > formerly: APPLE
+    #     COMPUTER
+    #     INC(filings
+    #     through
+    #     2007 - 01 - 04) < br / > formerly: APPLE
+    #     COMPUTER
+    #     INC / FA(filings
+    #     through
+    #     1997 - 07 - 28) < br / > (Assistant Director Office: 3) < br / > Get < a
+    #     href = "/cgi-bin/own-disp?action=getissuer&amp;CIK=0000320193" > < b > insider
+    #     transactions < / b > < / a >
+    #     for this < b > issuer </ b >.
+    #
+    # < / p >
+    # < / div >
+        page = requests.get(base_url)
+        tree = html.fromstring(page.content)
+        company_name = tree.xpath('//span[@class="companyName"]/text()')
+        print(company_name)
+        # if chosen_company_str in company_listing and chosen_company_str:
+        #     self.current_company = chosen_company_str
 
     def testing_print_user_settings(self):
         print(self.current_directory)
         print(self.current_company)
+
+    def autocapitalize_stringvar(self, var):
+        if isinstance(var, StringVar):
+            var.set(var.get().upper())
 
 
 def main():

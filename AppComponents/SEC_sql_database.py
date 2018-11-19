@@ -3,10 +3,19 @@ The SQL database to keep track of CIK keys, Company names, etc. from the SEC web
 This is the database for pdf_file_scraper.
 """
 import argparse
+import csv
+import os
 import sqlite3
+import sys
+
 import pandas as pd
 import pandas.io.sql as sql
 import requests
+from bs4 import BeautifulSoup
+
+from lxml import html
+import urllib.request
+import shutil
 
 # Custom made python file, name company_information
 # This file is included on Github page
@@ -17,12 +26,59 @@ conn_cursor = conn.cursor()
 sec_cik_url = requests.get('https://www.sec.gov/Archives/edgar/cik-lookup-data.txt', stream=True)
 our_cik_txt = 'CIK_List.txt'
 
+new_url = "http://rankandfiled.com/static/export/cik_ticker.csv"
+
+
+def test_scraping():
+    url = new_url
+    r = requests.get(url, verify=False, stream=True)
+    if r.status_code != 200:
+        print("Failure!!")
+        exit()
+    else:
+        r.raw.decode_content = True
+        with open("cik_ticker.csv", 'wb') as f:
+            shutil.copyfileobj(r.raw, f)
+        print("Success")
+
+
+def new_update_db():
+    counter = 1
+    with open('cik_ticker.csv') as fin:  # `with` statement available in 2.5+
+        # csv.DictReader uses first line in file for column headings by default
+        dr = csv.DictReader(fin, delimiter='|')  # comma is default delimiter
+        to_db = [(i['Name'], i['Ticker'], i['CIK'], i['Exchange'], i['SIC'], i['Business'],
+                  i['Incorporated'], i['IRS']) for i in dr]
+
+    conn_cursor.executemany(
+        "INSERT INTO companies (name, ticker_symbol, cik_key, exchange, sic, business, "
+        "incorporated, irs) VALUES (?, ?, ?, ?, ?, ?, ?, ?);", to_db)
+    conn.commit()
+
+    # for line in sec_cik_url.iter_lines():
+    #     counter += 1
+    #     if 4347 < counter <= 4351:
+    #         curr_comp_name = str(line).rsplit(':')[0][2:]
+    #         conn_cursor.execute("UPDATE companies SET name = :name WHERE line_number = :line_number",
+    #                             {'line_number': counter,
+    #                              'name': curr_comp_name,
+    #                              })
+    #         conn.commit()
+    #
+    #     if counter > 4351:
+    #         break
+
 
 def create_table():
     conn_cursor.execute("""CREATE TABLE IF NOT EXISTS companies (
-                            line_number INTEGER,
                             name TEXT,
-                            cik_key INTEGER
+                            ticker_symbol TEXT,
+                            cik_key INTEGER,
+                            exchange TEXT,
+                            sic INTEGER,
+                            business TEXT,
+                            incorporated TEXT,
+                            irs INTEGER
                             )"""
                         )
 
@@ -202,10 +258,80 @@ def remove_company(comp):
                              })
 
 
+def filing_10Q(company_code, cik, priorto, count):
+    # generate the url to crawl
+    base_url = "http://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=" + str(
+        cik) + "&type=10-Q&dateb=" + str(priorto) + "&owner=exclude&output=xml&count=" + str(count)
+    print("started 10-Q " + str(company_code))
+    r = requests.get(base_url)
+    data = r.text
+
+    # get doc list data
+    doc_list, doc_name_list = create_document_list(data)
+
+    try:
+        save_in_directory(company_code, cik, priorto, doc_list, doc_name_list, '10-Q')
+    except Exception as e:
+        print(str(e))
+
+    print("Successfully downloaded all the files")
+
+
+def create_document_list(data):
+    # parse fetched data using beatifulsoup
+    soup = BeautifulSoup(data)
+    # store the link in the list
+    link_list = list()
+
+    # If the link is .htm convert it to .html
+    for link in soup.find_all('filinghref'):
+        url = link.string
+        if link.string.split(".")[len(link.string.split(".")) - 1] == "htm":
+            url += "l"
+        link_list.append(url)
+    link_list_final = link_list
+
+    print("Number of files to download {0}".format(len(link_list_final)))
+    print("Starting download....")
+
+    # List of url to the text documents
+    doc_list = list()
+    # List of document names
+    doc_name_list = list()
+
+    # Get all the doc
+    for k in range(len(link_list_final)):
+        required_url = link_list_final[k].replace('-index.html', '')
+        txtdoc = required_url + ".txt"
+        docname = txtdoc.split("/")[-1]
+        doc_list.append(txtdoc)
+        doc_name_list.append(docname)
+    return doc_list, doc_name_list
+
+
+def save_in_directory(company_code, cik, priorto, doc_list, doc_name_list, filing_type):
+    # Save every text document into its respective folder
+    global filehandle
+    for j in range(len(doc_list)):
+        base_url = doc_list[j]
+        r = requests.get(base_url)
+        data = r.text
+        path = os.path.join(os.getcwd(), 'AnnualReports')
+        try:
+            filehandle = open(path, 'ab')
+        except IOError:
+            print("Unable to write to file " + path)
+            # sys.exit('Unable to write to file ' + path)
+
+        filehandle.write(data.encode('ascii', 'ignore'))
+
+
 if __name__ == '__main__':
     # create_table()
     # input_company_db_list()
     # delete_all_sql_data()
     # translate_db_to_csv_file()
     # update_company_db_list()
+    # test_scraping()
+    # new_update_db()
     conn.close()
