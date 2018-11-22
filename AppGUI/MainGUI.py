@@ -2,13 +2,13 @@
 import os
 import pickle
 import sys
-from tkinter import Tk, Menu, Label, StringVar, OptionMenu, Entry, Button, messagebox, Canvas, HORIZONTAL
+from tkinter import Tk, Menu, Label, StringVar, OptionMenu, Entry, Button, messagebox, Canvas, HORIZONTAL, Text, END
 from tkinter.ttk import Separator
 
 import requests
 from lxml import html
 
-from AppGUI.PopUpWindow import ChangeDirectoryGUI
+from AppGUI.PopUpWindow import ChangeDirectoryGUI, DownloadFileTypeDetailsGUI
 from AppComponents.User import CurrentUser
 from AppComponents import SECCompanyList
 from AppComponents.SECFileDownloader import FileDownloader
@@ -51,6 +51,12 @@ class MainGUIApp(Tk):
         # Set chosen company to display to None until initialized
         self.current_company = None
         self.current_company = self.current_user.get_chosen_company()
+
+        # SEC File Downloader object
+        self.sec_file_downloader = FileDownloader(self.current_directory, self.current_company)
+
+        self.file_type_details_gui = None
+        self.file_type_details = None
 
         # Set change directory window/dialog to None until initialized
         self.change_directory_dialog = None
@@ -124,12 +130,12 @@ class MainGUIApp(Tk):
 
     def company_information(self):
 
-        # Initialize our SEC EDGAR file downloader
-        sec_file_downloader = FileDownloader(self.current_directory, self.current_company)
-
         # Enter button to select the company
         # Enter button to select the company
-        search_company_button = Button(self, text="Download 10k", height=1, width=15)
+        search_company_button = Button(self, text="Download 10k",
+                                       command=self.show_file_type_details_gui,
+                                       height=1,
+                                       width=15)
         search_company_button.grid(row=6, sticky='w', padx=(10, 9), )
 
         #
@@ -137,6 +143,30 @@ class MainGUIApp(Tk):
         #                                command=lambda: sec_file_downloader.down
         #                                height=1,
         #                                width=15)
+
+    def show_file_type_details_gui(self):
+
+        self.file_type_details_gui = DownloadFileTypeDetailsGUI.FileTypeDetailsGUI(
+            self,
+            directory_observer=self.directory_observer,
+            window_title="File Type Details",
+            window_width=550, window_length=150,
+            icon_path=self.icon)
+
+    def download_file_type(self, prior_to_date, file_type, file_count):
+        # Initialize our SEC EDGAR file downloader
+        self.sec_file_downloader.get_company_file_type(self.current_company,
+                                                       "320193",
+                                                       file_type,
+                                                       prior_to_date,
+                                                       count=file_count)
+        # self.file_type_details_gui.close_application()
+        # self.confirmation_of_download()
+
+    def confirmation_of_download(self):
+        T = Text(self, height=2, width=30)
+        T.pack()
+        T.insert(END, "Just a text Widget\nin two lines\n")
 
     def main_menu_bar(self):
         menu_bar = Menu(self)
@@ -228,9 +258,11 @@ class MainGUIApp(Tk):
     def update_current_company(self, new_company):
         if new_company is None:
             self.current_company = None
+            self.sec_file_downloader.set_current_company(self.current_company)
             self.search_company_text.config(text="No company selected / Wrong company name selected")
         else:
             self.current_company = new_company
+            self.sec_file_downloader.set_current_company(self.current_company)
             self.search_company_text.config(text=self.current_company)
 
     def testing_print_user_settings(self):

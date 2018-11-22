@@ -31,7 +31,8 @@ class FileDownloader:
         self.current_directory = current_dir
 
         # Config file
-        self.wkhtmltopdf_config_file = path.join(current_dir, "wkhtmltopdf\\bin\\wkhtmltopdf.exe")
+        parent_path = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
+        self.wkhtmltopdf_config_file = path.join(parent_path, "wkhtmltopdf\\bin\\wkhtmltopdf.exe")
 
         # Variables to call/open the files
         self.download_sec_file_counter = 1
@@ -251,35 +252,36 @@ class FileDownloader:
 
         print("Base url we are trying to scrape for file types: " + base_url)
 
-        # Parent path, will direct to annual report and wkhtmltopdf config exe file
-        parent_path = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
-
         # Where the links to the htm files that need to be translated into pdf will go
         res = []
 
         # Get links to type of files for company
-        archives_data_links = self.get_file_type_htm_links(base_url, "filinghref", count)
+        archives_data_links = self.get_file_type_htm_links(base_url, "filinghref", int(count))
 
         # Get the actual htm of the type of file for the company
         for link in archives_data_links:
-            res = self.get_file_type_htm_links(link, "a", count)
+            res = self.get_file_type_htm_links(link, "a", int(count))
 
         # Translate each htm into pdf and save it to an Annual Reports folder
         for html_link in res:
             new_pdf_file_name = "\\" + html_link.rsplit('/', 1)[-1].rsplit('.', 1)[0] + ".pdf"
-            self.html_to_pdf_directly(html_link, parent_path, company_name.replace(" ", ""), new_pdf_file_name)
+            self.html_to_pdf_directly(html_link,
+                                      self.current_directory,
+                                      company_name.replace(" ", ""),
+                                      file_type,
+                                      new_pdf_file_name)
 
         print()
         print("Printed all " + file_type + " for: " + company_name + "!")
 
-    def html_to_pdf_directly(self, request, parent_path, company_name, pdf_file_name):
+    def html_to_pdf_directly(self, request, parent_path, company_name, file_type, pdf_file_name):
         # Config path to wkhtmltopdf, this exe file is needed for pdfkit
-        config_path = parent_path + "\\wkhtmltopdf\\bin\\wkhtmltopdf.exe"
-        config = pdfkit.configuration(wkhtmltopdf=config_path)
+        config = pdfkit.configuration(wkhtmltopdf=self.wkhtmltopdf_config_file)
 
         # Where we will save our files
-        annual_reports_path = parent_path + "\\AnnualReports"
-        company_path = parent_path + "\\AnnualReports\\" + company_name
+        annual_reports_path = self.current_directory + "\\AnnualReports"
+        company_path = annual_reports_path + "\\" + company_name
+        type_path = company_path + "\\" + file_type
 
         # If Annual Reports folder doesn't exist, make it
         if not os.path.exists(annual_reports_path):
@@ -295,10 +297,17 @@ class FileDownloader:
         else:
             print("Directory: ", company_path, " == Already exists")
 
-        print("Path of file we are converting: " + company_path + file_name)
+        # If type folder under company folder doesn't exist , make it
+        if not os.path.exists(type_path):
+            os.mkdir(type_path)
+            print("Directory: ", type_path, " == Created ")
+        else:
+            print("Directory: ", type_path, " == Already exists")
+
+        print("Path of file we are converting: " + type_path + pdf_file_name)
 
         # Get the url link to the file type and convert it into pdf
-        pdfkit.from_url(request, company_path + pdf_file_name, configuration=config)
+        pdfkit.from_url(request, type_path + pdf_file_name, configuration=config)
 
     def get_file_type_htm_links(self, url, find_all_seq, count):
         # Get our url and open it with library BeautifulSoup
@@ -327,3 +336,9 @@ class FileDownloader:
             count -= 1
 
         return file_link_list
+
+    def set_current_directory(self, new_dir):
+        self.current_directory = new_dir
+
+    def set_current_company(self, new_company):
+        self.company = new_company
