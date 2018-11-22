@@ -68,11 +68,14 @@ class MainGUIApp(Tk):
         # Set main menu bar and home page
         self.main_menu_bar()
         self.home_page()
-        self.company_information()
 
         # Display current company selection
         self.search_company_text = Label(self, text=self.current_company, font=("Helvetica", 12), justify='center')
         self.search_company_text.grid(row=5, padx=(30, 0), pady=10)
+
+        # Display company information if current company is not None
+        if self.current_company is not None:
+            self.company_information()
 
         # Closing app
         self.protocol("WM_DELETE_WINDOW", self.close_application)
@@ -123,6 +126,11 @@ class MainGUIApp(Tk):
 
         # Initialize our SEC EDGAR file downloader
         sec_file_downloader = FileDownloader(self.current_directory, self.current_company)
+
+        # Enter button to select the company
+        # Enter button to select the company
+        search_company_button = Button(self, text="Download 10k", height=1, width=15)
+        search_company_button.grid(row=6, sticky='w', padx=(10, 9), )
 
         #
         # ten_k_annual_reports_downloader = Button(self, text="Search",
@@ -211,17 +219,19 @@ class MainGUIApp(Tk):
             tree = html.fromstring(page.content)
             company_name = tree.xpath('//span[@class="companyName"]/text()')
             if not company_name:
-                self.update_current_company("No company selected / Wrong company name selected")
+                self.update_current_company(None)
                 return
 
         print(company_name[0])
         self.update_current_company(company_name[0])
-        # if chosen_company_str in company_listing and chosen_company_str:
-        #     self.current_company = chosen_company_str
 
     def update_current_company(self, new_company):
-        self.current_company = new_company
-        self.search_company_text.config(text=self.current_company)
+        if new_company is None:
+            self.current_company = None
+            self.search_company_text.config(text="No company selected / Wrong company name selected")
+        else:
+            self.current_company = new_company
+            self.search_company_text.config(text=self.current_company)
 
     def testing_print_user_settings(self):
         print(self.current_directory)

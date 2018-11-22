@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c74ea74-ebe4-417d-a87d-4c9a0737a091" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppComponents/SECFileDownloader.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppComponents/SECFileDownloader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppComponents/SEC_sql_database.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppComponents/SEC_sql_database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppComponents/TestComponents.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppComponents/TestComponents.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppGUI/MainGUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppGUI/MainGUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentU123ser.svc" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/CurrentUser.svc" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentUser.svc" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,13 +24,15 @@
     <session id="1889690571">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
-          <entry key="project.open.time.10" value="1" />
+          <entry key="project.closed" value="9" />
+          <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.6" value="3" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -43,13 +50,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="2" />
-          <entry key="py" value="8330" />
+          <entry key="py" value="13274" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="8330" />
+          <entry key="Python" value="13274" />
         </counts>
       </usages-collector>
     </session>
@@ -66,46 +73,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/AppGUI/MainGUI.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="223" column="32" selection-start-line="223" selection-start-column="32" selection-end-line="223" selection-end-column="32" />
-              <folding>
-                <element signature="e#22#31#0" expanded="true" />
-                <element signature="e#5780#6252#0" />
-                <element signature="e#6303#6811#0" />
-                <element signature="e#6854#7036#0" />
-                <element signature="e#7079#7267#0" />
-                <element signature="e#7310#7573#0" />
-                <marker date="1542604885897" expanded="true" signature="925:935" ph="..." />
-                <marker date="1542604885897" expanded="true" signature="5294:5711" ph="..." />
-                <marker date="1542604885897" expanded="true" signature="9562:9645" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AppComponents/TestComponents.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="30" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AppComponents/SECFileDownloader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5036">
-              <caret line="40" column="36" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="75" />
+            <state relative-caret-position="1980">
+              <caret line="309" column="17" selection-start-line="309" selection-start-column="17" selection-end-line="309" selection-end-column="17" />
               <folding>
                 <element signature="e#157#172#0" expanded="true" />
-                <marker date="1542581006734" expanded="true" signature="404:409" ph="..." />
-                <marker date="1542581006734" expanded="true" signature="2757:2763" ph="..." />
+                <marker date="1542855272574" expanded="true" signature="459:464" ph="..." />
+                <marker date="1542855272574" expanded="true" signature="2812:2818" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AppGUI/MainGUI.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="624">
+              <caret line="213" column="25" selection-start-line="213" selection-start-column="25" selection-end-line="213" selection-end-column="25" />
+              <folding>
+                <element signature="e#22#31#0" expanded="true" />
+                <marker date="1542683604617" expanded="true" signature="925:935" ph="..." />
+                <marker date="1542683604617" expanded="true" signature="5413:6076" ph="..." />
               </folding>
             </state>
           </provider>
@@ -114,11 +103,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AppComponents/SEC_sql_database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="262" column="4" selection-start-line="262" selection-start-column="4" selection-end-line="266" selection-end-column="17" />
+            <state relative-caret-position="340">
+              <caret line="17" selection-start-line="17" selection-end-line="17" selection-end-column="43" />
               <folding>
-                <element signature="e#137#152#0" expanded="true" />
-                <marker date="1542600878713" expanded="true" signature="1110:2232" ph="..." />
+                <marker date="1542855043329" expanded="true" signature="1146:2268" ph="..." />
+                <marker date="1542855043329" expanded="true" signature="7962:11386" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AppComponents/TestComponents.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="88" column="16" selection-start-line="88" selection-start-column="16" selection-end-line="88" selection-end-column="51" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -127,7 +128,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AppComponents/pdf_file_scraper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4732">
+            <state relative-caret-position="-874">
               <caret line="177" column="27" selection-start-line="177" selection-start-column="27" selection-end-line="177" selection-end-column="36" />
               <folding>
                 <element signature="e#111#126#0" expanded="true" />
@@ -169,6 +170,11 @@
       <find>END</find>
       <find>COMPANY</find>
       <find>companyInfo</find>
+      <find>wkhtmltopdf</find>
+      <find>config</find>
+      <find>wkhtmltopdf_config</find>
+      <find>qua</find>
+      <find>Quarter</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -187,11 +193,11 @@
         <option value="$PROJECT_DIR$/AppComponents/User.py" />
         <option value="$PROJECT_DIR$/AppGUI/AutoCompleteDropdownList.py" />
         <option value="$PROJECT_DIR$/AppComponents/SECCompanyList.py" />
-        <option value="$PROJECT_DIR$/AppComponents/SECFileDownloader.py" />
-        <option value="$PROJECT_DIR$/AppComponents/SEC_sql_database.py" />
         <option value="$PROJECT_DIR$/AppComponents/testComponents.py" />
-        <option value="$PROJECT_DIR$/AppComponents/TestComponents.py" />
         <option value="$PROJECT_DIR$/AppGUI/MainGUI.py" />
+        <option value="$PROJECT_DIR$/AppComponents/TestComponents.py" />
+        <option value="$PROJECT_DIR$/AppComponents/SEC_sql_database.py" />
+        <option value="$PROJECT_DIR$/AppComponents/SECFileDownloader.py" />
       </list>
     </option>
   </component>
@@ -209,6 +215,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -236,12 +243,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="C:/ProgramData/Anaconda3/envs/masterenvgpu/python.exe" />
-    <property name="settings.editor.selected.configurable" value="editor.breadcrumbs" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyDebuggerOptionsProvider">
     <option name="mySaveCallSignatures" value="true" />
@@ -266,7 +272,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.MainGUI">
+  <component name="RunManager" selected="Python.SEC_sql_database">
     <configuration name="MainGUI" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="SEC_file_downloader" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -359,9 +365,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.MainGUI" />
-        <item itemvalue="Python.TestComponents" />
         <item itemvalue="Python.SEC_sql_database" />
+        <item itemvalue="Python.TestComponents" />
+        <item itemvalue="Python.MainGUI" />
         <item itemvalue="Python.SECCompanyList" />
       </list>
     </recent_temporary>
@@ -390,9 +396,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14342366" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14342366" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -404,8 +409,8 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32905984" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.32905984" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32905984" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50033045" side_tool="true" weight="0.3988604" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50033045" side_tool="true" weight="0.3988604" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32765958" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -464,30 +469,17 @@
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/urllib/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/AppComponents/User.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AppGUI/AutoCompleteDropdownList.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1288">
           <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AppComponents/pdf_file_scraper.py">
+    <entry file="file://$PROJECT_DIR$/AppComponents/User.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4732">
-          <caret line="177" column="27" selection-start-line="177" selection-start-column="27" selection-end-line="177" selection-end-column="36" />
-          <folding>
-            <element signature="e#111#126#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="532">
+          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -505,53 +497,57 @@
     <entry file="file://$PROJECT_DIR$/AppComponents/company_information.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/AppComponents/SEC_sql_database.py">
+    <entry file="file://$PROJECT_DIR$/AppGUI/MainGUI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="262" column="4" selection-start-line="262" selection-start-column="4" selection-end-line="266" selection-end-column="17" />
+        <state relative-caret-position="624">
+          <caret line="213" column="25" selection-start-line="213" selection-start-column="25" selection-end-line="213" selection-end-column="25" />
           <folding>
-            <element signature="e#137#152#0" expanded="true" />
-            <marker date="1542600878713" expanded="true" signature="1110:2232" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppComponents/SECFileDownloader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5036">
-          <caret line="40" column="36" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="75" />
-          <folding>
-            <element signature="e#157#172#0" expanded="true" />
-            <marker date="1542581006734" expanded="true" signature="404:409" ph="..." />
-            <marker date="1542581006734" expanded="true" signature="2757:2763" ph="..." />
+            <element signature="e#22#31#0" expanded="true" />
+            <marker date="1542683604617" expanded="true" signature="925:935" ph="..." />
+            <marker date="1542683604617" expanded="true" signature="5413:6076" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AppComponents/TestComponents.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="30" selection-end-column="25" />
+        <state relative-caret-position="272">
+          <caret line="88" column="16" selection-start-line="88" selection-start-column="16" selection-end-line="88" selection-end-column="51" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AppGUI/MainGUI.py">
+    <entry file="file://$PROJECT_DIR$/AppComponents/pdf_file_scraper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="223" column="32" selection-start-line="223" selection-start-column="32" selection-end-line="223" selection-end-column="32" />
+        <state relative-caret-position="-874">
+          <caret line="177" column="27" selection-start-line="177" selection-start-column="27" selection-end-line="177" selection-end-column="36" />
           <folding>
-            <element signature="e#22#31#0" expanded="true" />
-            <element signature="e#5780#6252#0" />
-            <element signature="e#6303#6811#0" />
-            <element signature="e#6854#7036#0" />
-            <element signature="e#7079#7267#0" />
-            <element signature="e#7310#7573#0" />
-            <marker date="1542604885897" expanded="true" signature="925:935" ph="..." />
-            <marker date="1542604885897" expanded="true" signature="5294:5711" ph="..." />
-            <marker date="1542604885897" expanded="true" signature="9562:9645" ph="..." />
+            <element signature="e#111#126#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppComponents/SEC_sql_database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="17" selection-start-line="17" selection-end-line="17" selection-end-column="43" />
+          <folding>
+            <marker date="1542855043329" expanded="true" signature="1146:2268" ph="..." />
+            <marker date="1542855043329" expanded="true" signature="7962:11386" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppComponents/SECFileDownloader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1980">
+          <caret line="309" column="17" selection-start-line="309" selection-start-column="17" selection-end-line="309" selection-end-column="17" />
+          <folding>
+            <element signature="e#157#172#0" expanded="true" />
+            <marker date="1542855272574" expanded="true" signature="459:464" ph="..." />
+            <marker date="1542855272574" expanded="true" signature="2812:2818" ph="..." />
           </folding>
         </state>
       </provider>

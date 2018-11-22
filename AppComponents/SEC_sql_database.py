@@ -8,13 +8,14 @@ import os
 import sqlite3
 import sys
 
+import pdfkit
 import pandas as pd
 import pandas.io.sql as sql
 import requests
 from bs4 import BeautifulSoup
 
 from lxml import html
-import urllib.request
+from urllib.request import urlopen, Request
 import shutil
 
 # Custom made python file, name company_information
@@ -258,72 +259,92 @@ def remove_company(comp):
                              })
 
 
-def filing_10Q(company_code, cik, priorto, count):
-    # generate the url to crawl
+def get_company_file_type(company_name, cik_key, file_type, prior_to, count=10):
+    # Generate the url to crawl
     base_url = "http://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=" + str(
-        cik) + "&type=10-Q&dateb=" + str(priorto) + "&owner=exclude&output=xml&count=" + str(count)
-    print("started 10-Q " + str(company_code))
-    r = requests.get(base_url)
-    data = r.text
+        cik_key) + "&type=" + str(file_type) + "&dateb=" + str(prior_to) + "&owner=exclude&output=xml&count=" + str(
+        count)
 
-    # get doc list data
-    doc_list, doc_name_list = create_document_list(data)
+    print("Base url we are trying to scrape for file types: " + base_url)
 
-    try:
-        save_in_directory(company_code, cik, priorto, doc_list, doc_name_list, '10-Q')
-    except Exception as e:
-        print(str(e))
+    # Parent path, will direct to annual report and wkhtmltopdf config exe file
+    parent_path = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
 
-    print("Successfully downloaded all the files")
+    # Where the links to the htm files that need to be translated into pdf will go
+    res = []
 
+    # Get links to type of files for company
+    archives_data_links = get_file_type_htm_links(base_url, "filinghref", count)
 
-def create_document_list(data):
-    # parse fetched data using beatifulsoup
-    soup = BeautifulSoup(data)
-    # store the link in the list
-    link_list = list()
+    # Get the actual htm of the type of file for the company
+    for link in archives_data_links:
+        res = get_file_type_htm_links(link, "a", count)
 
-    # If the link is .htm convert it to .html
-    for link in soup.find_all('filinghref'):
-        url = link.string
-        if link.string.split(".")[len(link.string.split(".")) - 1] == "htm":
-            url += "l"
-        link_list.append(url)
-    link_list_final = link_list
+    # Translate each htm into pdf and save it to an Annual Reports folder
+    for html_link in res:
+        file_name = "\\" + html_link.rsplit('/', 1)[-1].rsplit('.', 1)[0] + ".pdf"
+        html_to_pdf_directly(html_link, parent_path, company_name.replace(" ", ""), file_name)
 
-    print("Number of files to download {0}".format(len(link_list_final)))
-    print("Starting download....")
-
-    # List of url to the text documents
-    doc_list = list()
-    # List of document names
-    doc_name_list = list()
-
-    # Get all the doc
-    for k in range(len(link_list_final)):
-        required_url = link_list_final[k].replace('-index.html', '')
-        txtdoc = required_url + ".txt"
-        docname = txtdoc.split("/")[-1]
-        doc_list.append(txtdoc)
-        doc_name_list.append(docname)
-    return doc_list, doc_name_list
+    print()
+    print("Printed all " + file_type + " for: " + company_name + "!")
 
 
-def save_in_directory(company_code, cik, priorto, doc_list, doc_name_list, filing_type):
-    # Save every text document into its respective folder
-    global filehandle
-    for j in range(len(doc_list)):
-        base_url = doc_list[j]
-        r = requests.get(base_url)
-        data = r.text
-        path = os.path.join(os.getcwd(), 'AnnualReports')
-        try:
-            filehandle = open(path, 'ab')
-        except IOError:
-            print("Unable to write to file " + path)
-            # sys.exit('Unable to write to file ' + path)
+def html_to_pdf_directly(request, parent_path, company_name, file_name):
+    # Config path to wkhtmltopdf, this exe file is needed for pdfkit
+    config_path = parent_path + "\\wkhtmltopdf\\bin\\wkhtmltopdf.exe"
+    config = pdfkit.configuration(wkhtmltopdf=config_path)
 
-        filehandle.write(data.encode('ascii', 'ignore'))
+    # Where we will save our files
+    annual_reports_path = parent_path + "\\AnnualReports"
+    company_path = parent_path + "\\AnnualReports\\" + company_name
+
+    # If Annual Reports folder doesn't exist, make it
+    if not os.path.exists(annual_reports_path):
+        os.mkdir(annual_reports_path)
+        print("Directory: ", annual_reports_path, " == Created ")
+    else:
+        print("Directory: ", annual_reports_path, " == Already exists")
+
+    # If company folder under the Annual Reports folder doesn't exist, make it
+    if not os.path.exists(company_path):
+        os.mkdir(company_path)
+        print("Directory: ", company_path, " == Created ")
+    else:
+        print("Directory: ", company_path, " == Already exists")
+
+    print("Path of file we are converting: " + company_path + file_name)
+
+    # Get the url link to the file type and convert it into pdf
+    pdfkit.from_url(request, company_path + file_name, configuration=config)
+
+
+def get_file_type_htm_links(url, find_all_seq, count):
+    # Get our url and open it with library BeautifulSoup
+    req = Request(url)
+    html_page = urlopen(req)
+    soup = BeautifulSoup(html_page, features="lxml")
+
+    # Initialize 2 lists, since we'll have to first get all the links, then get only the amount of links asked by user
+    # This amount is given by parameter 'count'
+    href_list = []
+    file_link_list = []
+
+    # Get all the links to file type
+    for link in soup.findAll(find_all_seq):
+        if find_all_seq is "a":
+            if link.get('href').startswith("/Archives/edgar/data/"):
+                href_list.append("https://www.sec.gov" + link.get('href'))
+        else:
+            href_list.append(link.text)
+
+    # Get only the amount of links that the user asks for, dictated by parameter 'count'
+    for data in href_list:
+        if count is 0:
+            break
+        file_link_list.append(data)
+        count -= 1
+
+    return file_link_list
 
 
 if __name__ == '__main__':
@@ -334,4 +355,7 @@ if __name__ == '__main__':
     # update_company_db_list()
     # test_scraping()
     # new_update_db()
+    # str1 = "https://www.sec.gov/Archives/edgar/data/320193/000032019317000009/a10-qq32017712017.htm"
+    # print(str1.rsplit('/', 1)[-1].rsplit('.', 1)[0])
+    get_company_file_type("APPLE INC", "320193", "10-Q", 20180101, count=5)
     conn.close()
