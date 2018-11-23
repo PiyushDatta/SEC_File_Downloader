@@ -1,4 +1,5 @@
 import os
+from AppComponents import Company
 
 
 class CurrentUser:
@@ -7,8 +8,8 @@ class CurrentUser:
     """
 
     def __init__(self):
-        self._current_directory = os.path.dirname(os.getcwd())
-        self._chosen_company = 'APPL'
+        self._current_directory = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
+        self._chosen_company = Company.CurrentCompany('APPLE INC', "0000320193")
 
     def set_current_directory(self, curr_dir):
         self._current_directory = curr_dir

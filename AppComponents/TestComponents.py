@@ -22,6 +22,29 @@ import PyQt4
 import sys
 
 
+def test_function(company_name, cik_name):
+    cik_url = "https://www.sec.gov/cgi-bin/browse-edgar?CIK=" + str(
+            company_name) + "&owner=exclude&action=getcompany"
+    company = None
+    cik_key = None
+
+    # company_url = "https://www.sec.gov/cgi-bin/browse-edgar?company=" + str(
+    #     company_name) + "&owner=exclude&action=getcompany"
+    print(cik_url)
+    req = Request(cik_url)
+    # req = Request(company_url)
+    html_page = urlopen(req).read()
+    soup = BeautifulSoup(html_page, features="lxml")
+    links = soup.find_all("span", {"class": "companyName"})
+
+    if len(links) is 0:
+        return
+
+    company = str(links[0].text.split("CIK#:")[0]).strip()
+    cik_key = str(links[0].text.split("CIK#:")[1]).strip().split(" ", 1)[0]
+    print(company)
+    print(cik_key)
+
 
 # https://www.sec.gov/cgi-bin/viewer?action=
 # view&cik=320193&accession_number=0001628280-17-004790&xbrl_type=v
@@ -72,7 +95,6 @@ def html_to_pdf_directly(request):
     path = os.path.abspath(os.path.join(os.getcwd(), os.pardir)) + "\\wkhtmltopdf\\bin\\wkhtmltopdf.exe"
     config = pdfkit.configuration(wkhtmltopdf=path)
     pdfkit.from_url(request, 'out.pdf', configuration=config)
-
 
 
 def test_fun(url, href_link, count=0):
@@ -146,5 +168,6 @@ def save_in_directory(company_code, cik, priorto, doc_list, doc_name_list, filin
 
 if __name__ == '__main__':
     # APPLE INC
-    pisa.showLogging()
-    get_entry_text("APPLE INC", "0000320193", 20180101, 1)
+    # pisa.showLogging()
+    # get_entry_text("APPLE INC", "0000320193", 20180101, 1)
+    test_function("APPLE+INC", "0000320193")

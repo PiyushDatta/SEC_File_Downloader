@@ -38,8 +38,8 @@ class FileDownloader:
         self.download_sec_file_counter = 1
         # our_cik_txt = 'CIK_List.txt'
         # our_cik_csv = 'CIK_List.csv'
-
         self.company = selected_company
+        # self.company = selected_company.get_chosen_company_cik_key()
 
         # Annual reports folder
         self.annual_report_folder = path.join(current_dir, 'AnnualReports')

@@ -11,6 +11,7 @@ class CurrentDirectoryObserver(ObserverInterface.Observer):
 
     def __init__(self):
         super(CurrentDirectoryObserver, self).__init__()
+        self._directory_state = None
 
     def update(self, new_dir):
         self._directory_state = new_dir

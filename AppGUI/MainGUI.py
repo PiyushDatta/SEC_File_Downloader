@@ -5,14 +5,14 @@ import sys
 from tkinter import Tk, Menu, Label, StringVar, OptionMenu, Entry, Button, messagebox, Canvas, HORIZONTAL, Text, END
 from tkinter.ttk import Separator
 
-import requests
-from lxml import html
+from bs4 import BeautifulSoup
+from urllib.request import urlopen, Request
 
 from AppGUI.PopUpWindow import ChangeDirectoryGUI, DownloadFileTypeDetailsGUI
-from AppComponents.User import CurrentUser
+from AppComponents.User import CurrentUser, Company
 from AppComponents import SECCompanyList
 from AppComponents.SECFileDownloader import FileDownloader
-from Observers import DirectoryObserver
+from Observers import DirectoryObserver, FileTypeDetailsObserver
 from AppGUI.AutoCompleteDropdownList import AutocompleteEntry
 
 
@@ -40,8 +40,8 @@ class MainGUIApp(Tk):
         # Initialize existing or new user
         self.current_user = CurrentUser()
 
-        # Load up saved data from pickle file
-        self._pickle_file = self.current_user.get_current_directory() + "\\CurrentUser.svc"
+        # Load up saved data from pickle file, this will always be saved to SEC_file_downloader folder
+        self._pickle_file = os.path.abspath(os.path.join(os.getcwd(), os.pardir)) + "\\CurrentUser.svc"
         self.load_user_details()
 
         # Set current directory as user's last directory, if None then directory will be none
@@ -68,15 +68,19 @@ class MainGUIApp(Tk):
         self.directory_observer = DirectoryObserver.CurrentDirectoryObserver()
         self.attach_observer(self.directory_observer)
 
-        # Update DirectoryObserver
-        self._notify_observer()
+        # Add FileTypeDetailsObserver
+        self.file_details_observer = FileTypeDetailsObserver.FileDetailsObserver()
+        self.attach_observer(self.file_details_observer)
+
+        # Update DirectoryObserver, key word is name of observer object for this class
+        self._notify_observer("directory_observer")
 
         # Set main menu bar and home page
         self.main_menu_bar()
         self.home_page()
 
         # Display current company selection
-        self.search_company_text = Label(self, text=self.current_company, font=("Helvetica", 12), justify='center')
+        self.search_company_text = Label(self, text=self.current_company.get_chosen_company_name(), font=("Helvetica", 12), justify='center')
         self.search_company_text.grid(row=5, padx=(30, 0), pady=10)
 
         # Display company information if current company is not None
@@ -86,7 +90,24 @@ class MainGUIApp(Tk):
         # Closing app
         self.protocol("WM_DELETE_WINDOW", self.close_application)
 
-        # self.change_directory_dialog.closeEvent(self.update_from_observer())
+    def main_menu_bar(self):
+        menu_bar = Menu(self)
+
+        # Add file menu, this is the header and if you click it, it drops down to the labels
+        file_menu = Menu(menu_bar, tearoff=False)
+        menu_bar.add_cascade(label="File", menu=file_menu)
+
+        # If user wants to change directory, this will open a new window
+        file_menu.add_command(label="Change Directory", command=self.show_change_directory_gui)
+
+        # For testing purposes, want to see if the user settings save
+        file_menu.add_command(label="Test-Print User Settings", command=self.testing_print_user_settings)
+
+        # If user wants to quit the program entirely
+        file_menu.add_command(label="Quit!", command=self.close_application)
+
+        # Display the menu
+        self.config(menu=menu_bar)
 
     def home_page(self):
         # Have a text for current directory, pad y by 20, and set anchor to w (west)
@@ -106,12 +127,15 @@ class MainGUIApp(Tk):
         self.search_company_text = Label(self, text="Search SEC company directory: ", font=("Helvetica", 12))
         self.search_company_text.grid(row=1, sticky="w")
 
-        # Drop down for searching SEC company listings
-        db_downloader = SECCompanyList.CompanyList()
-        db_downloader.update_list_from_db()
-        SEC_COMPANY_LISTINGS = db_downloader.get_company_name_list()
-
+        # Drop down for searching SEC company listings (might add later)
+        # =============================================================
+        # db_downloader = SECCompanyList.CompanyList()
+        # db_downloader.update_list_from_db()
+        # SEC_COMPANY_LISTINGS = db_downloader.get_company_name_list()
         # search_company_dropdown = AutocompleteEntry(SEC_COMPANY_LISTINGS, self, width=100)
+        # =============================================================
+
+        # Make entry for searching companies, and make sure anything written is in caps
         inputted_text = StringVar()
         search_company_dropdown = Entry(self, width=100, textvariable=inputted_text)
         inputted_text.trace("w", lambda *_, var=inputted_text: self.autocapitalize_stringvar(var))
@@ -119,7 +143,7 @@ class MainGUIApp(Tk):
 
         # Enter button to select the company
         search_company_button = Button(self, text="Search",
-                                       command=lambda: self.get_entry_text(search_company_dropdown.get()),
+                                       command=lambda: self.get_company_entry_text(search_company_dropdown.get()),
                                        height=1,
                                        width=15)
         search_company_button.grid(column=2, row=1, padx=10, pady=(0, 5))
@@ -168,17 +192,6 @@ class MainGUIApp(Tk):
         T.pack()
         T.insert(END, "Just a text Widget\nin two lines\n")
 
-    def main_menu_bar(self):
-        menu_bar = Menu(self)
-        file_menu = Menu(menu_bar, tearoff=False)
-        menu_bar.add_cascade(label="File", menu=file_menu)
-        file_menu.add_command(label="Change Directory", command=self.show_change_directory_gui)
-        file_menu.add_command(label="Test-Print User Settings", command=self.testing_print_user_settings)
-        file_menu.add_command(label="Quit!", command=self.close_application)
-
-        # display the menu
-        self.config(menu=menu_bar)
-
     def show_change_directory_gui(self):
         # Initialize ChangeDirectoryGUI if user wants to open that window
         self.change_directory_dialog = ChangeDirectoryGUI.ChangeDirectoryGUI(directory_observer=self.directory_observer,
@@ -215,9 +228,10 @@ class MainGUIApp(Tk):
         observer._subject = None
         self._observers.discard(observer)
 
-    def _notify_observer(self):
+    def _notify_observer(self, type_of_observer):
         for observer in self._observers:
-            observer.update(self.current_directory)
+            if type_of_observer is "directory_observer" and observer is self.directory_observer:
+                observer.update(self.current_directory)
 
     def update_from_observer(self):
         print("Updating from observers")
@@ -226,34 +240,47 @@ class MainGUIApp(Tk):
             if observer is isinstance(observer, DirectoryObserver.CurrentDirectoryObserver):
                 self.current_directory = observer.get_directory()
 
-    def get_entry_text(self, chosen_company_str):
+    def get_company_entry_text(self, chosen_company_str):
         print("Chosen company: " + chosen_company_str)
 
-        cik_url = "https://www.sec.gov/cgi-bin/browse-edgar?CIK=" + str(
+        # First check to see if the given string is a ticker symbol
+        # If so then len(links) would not be 0
+        ticker_url = "https://www.sec.gov/cgi-bin/browse-edgar?CIK=" + str(
             chosen_company_str) + "&owner=exclude&action=getcompany"
 
-        # SEC doesn't use spaces, they use the + sign in place of any spaces
-        chosen_company_str.replace(" ", "+")
+        req = Request(ticker_url)
+        html_page = urlopen(req).read()
+        soup = BeautifulSoup(html_page, features="lxml")
+        links = soup.find_all("span", {"class": "companyName"})
 
-        company_name_url = "https://www.sec.gov/cgi-bin/browse-edgar?company=" + str(
-            chosen_company_str) + "&owner=exclude&action=getcompany"
+        if len(links) is 0:
+            # SEC doesn't use spaces, they use the + sign in place of any spaces
+            chosen_company_str.replace(" ", "+")
 
-        company_name = []
+            # Now check if the given string is a company name, this name has to be exact to
+            # how SEC writes it down. The company's legal name.
+            # If len(links) is 0, that means this string is completely invalid.
+            company_name_url = "https://www.sec.gov/cgi-bin/browse-edgar?company=" + str(
+                chosen_company_str) + "&owner=exclude&action=getcompany"
 
-        page = requests.get(cik_url)
-        tree = html.fromstring(page.content)
-        company_name = tree.xpath('//span[@class="companyName"]/text()')
+            req = Request(company_name_url)
+            html_page = urlopen(req).read()
+            soup = BeautifulSoup(html_page, features="lxml")
+            links = soup.find_all("span", {"class": "companyName"})
 
-        if not company_name:
-            page = requests.get(company_name_url)
-            tree = html.fromstring(page.content)
-            company_name = tree.xpath('//span[@class="companyName"]/text()')
-            if not company_name:
+            if len(links) is 0:
                 self.update_current_company(None)
                 return
 
-        print(company_name[0])
-        self.update_current_company(company_name[0])
+        # From the link, whether it be a ticker symbol or actual company legal name,
+        # get the company name and cik key. Create a new company object from these 2 vars.
+        company_name = str(links[0].text.split("CIK#:")[0]).strip()
+        cik_key = str(links[0].text.split("CIK#:")[1]).strip().split(" ", 1)[0]
+        new_company = Company.CurrentCompany(company_name, cik_key)
+
+        print("Chosen company name: " + new_company.get_chosen_company_name())
+        print("Chosen company cik key: " + new_company.get_chosen_company_cik_key())
+        self.update_current_company(new_company)
 
     def update_current_company(self, new_company):
         if new_company is None:
@@ -263,7 +290,7 @@ class MainGUIApp(Tk):
         else:
             self.current_company = new_company
             self.sec_file_downloader.set_current_company(self.current_company)
-            self.search_company_text.config(text=self.current_company)
+            self.search_company_text.config(text=self.current_company.get_chosen_company_name())
 
     def testing_print_user_settings(self):
         print(self.current_directory)
