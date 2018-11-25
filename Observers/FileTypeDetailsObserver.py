@@ -12,6 +12,10 @@ class FileDetailsObserver(ObserverInterface.Observer):
     def __init__(self):
         super(FileDetailsObserver, self).__init__()
         self._file_details_state = None
+        self._controllers = None
+
+    def set_controllers(self, targets):
+        self._controllers = targets
 
     def update(self, new_details):
         self._file_details_state = new_details

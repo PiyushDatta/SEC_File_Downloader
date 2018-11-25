@@ -7,8 +7,9 @@ class Observer(metaclass=abc.ABCMeta):
     changes in a subject.
     """
 
-    def __init__(self):
-        self._subject = None
+    @abc.abstractmethod
+    def set_controllers(self, targets):
+        pass
 
     @abc.abstractmethod
     def update(self, new_dir):

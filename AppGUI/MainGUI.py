@@ -2,13 +2,19 @@
 import os
 import pickle
 import sys
-from tkinter import Tk, Menu, Label, StringVar, OptionMenu, Entry, Button, messagebox, Canvas, HORIZONTAL, Text, END
+
+import tkinter as tk
+from tkinter import ttk, Tk, Menu, Label, StringVar, OptionMenu, Entry, Button, messagebox, Canvas, HORIZONTAL, Text, \
+    END
 from tkinter.ttk import Separator
 
 from bs4 import BeautifulSoup
 from urllib.request import urlopen, Request
 
+from AppGUI.MainGUIActions import MainGUIActions
 from AppGUI.PopUpWindow import ChangeDirectoryGUI, DownloadFileTypeDetailsGUI
+from AppGUI.TopLayerPanel import TopPanel
+from AppGUI.MainMenuPanel import MainMenuBar
 from AppComponents.User import CurrentUser, Company
 from AppComponents import SECCompanyList
 from AppComponents.SECFileDownloader import FileDownloader
@@ -19,11 +25,13 @@ from AppGUI.AutoCompleteDropdownList import AutocompleteEntry
 # Remember that this window runs in the ./AppGui folder, so any assets should be in there Naming convention by
 # Google: module_name, package_name, ClassName, method_name, ExceptionName, function_name,
 # GLOBAL_CONSTANT_NAME, global_var_name, instance_var_name, function_parameter_name, local_var_name.
-class MainGUIApp(Tk):
+
+#raise ConnectionError(e, request=request)
+class MainGUIApp(tk.Tk):
     def __init__(self, window_title, window_width, window_length):
 
         # Window settings
-        Tk.__init__(self)
+        tk.Tk.__init__(self)
         self.title(window_title)
         self.icon = os.getcwd() + '\\SEFD_logo_icon.ico'
         self.iconbitmap(self.icon)
@@ -38,6 +46,7 @@ class MainGUIApp(Tk):
         self.geometry('%dx%d+%d+%d' % (window_width, window_length, x, y))
 
         # Initialize existing or new user
+        # super().__init__()
         self.current_user = CurrentUser()
 
         # Load up saved data from pickle file, this will always be saved to SEC_file_downloader folder
@@ -61,27 +70,53 @@ class MainGUIApp(Tk):
         # Set change directory window/dialog to None until initialized
         self.change_directory_dialog = None
 
+        container = tk.Frame(self)
+        container.grid(sticky="nsew")
+        container.grid_rowconfigure(0, weight=1)
+        container.grid_columnconfigure(0, weight=1)
+
+        self.frames = {}
+        for F in (TopPanel,):
+            page_name = F.__name__
+            self.top_panel = F.TopPanel(parent_frame=container, controller=self, current_directory=self.current_directory,  current_company=self.current_company)
+            self.frames[page_name] = self.top_panel
+            # self.top_panel.grid(row=0, column=0, sticky="nsew")
+
+        self.menus = {}
+        for M in (MainMenuBar,):
+            page_name = M.__name__
+            self.main_menu = M.MainMenu(parent_frame=container, controller=self, current_directory=self.current_directory,  current_company=self.current_company, icon=self.icon)
+            self.menus[page_name] = self.main_menu
+        ################################################################################################################
+        ################################################################################################################
+        # self.top_panel = TopPanel.TopPanel(self, self.current_directory, self.current_company)
+        self.main_gui_actions = MainGUIActions(self.current_directory,
+                                               self.current_company,
+                                               self.top_panel.get_controller(),
+                                               self.main_menu.get_controller())
+        self.main_gui_actions.set_observer_targets()
+        self.main_gui_actions.set_all_controller_observers()
+        ################################################################################################################
+        ################################################################################################################
+        self.show_frame("AppGUI.TopLayerPanel.TopPanel")
+        self.show_menu("AppGUI.MainMenuPanel.MainMenuBar")
         # Make an observer a set
-        self._observers = set()
+        # self._observers = set()
 
         # Add DirectoryObserver
-        self.directory_observer = DirectoryObserver.CurrentDirectoryObserver()
-        self.attach_observer(self.directory_observer)
+        # self.directory_observer = DirectoryObserver.CurrentDirectoryObserver()
+        # self.attach_observer(self.directory_observer)
 
         # Add FileTypeDetailsObserver
-        self.file_details_observer = FileTypeDetailsObserver.FileDetailsObserver()
-        self.attach_observer(self.file_details_observer)
+        # self.file_details_observer = FileTypeDetailsObserver.FileDetailsObserver()
+        # self.attach_observer(self.file_details_observer)
 
         # Update DirectoryObserver, key word is name of observer object for this class
-        self._notify_observer("directory_observer")
+        # self._notify_observer("directory_observer")
 
         # Set main menu bar and home page
-        self.main_menu_bar()
-        self.home_page()
-
-        # Display current company selection
-        self.search_company_text = Label(self, text=self.current_company.get_chosen_company_name(), font=("Helvetica", 12), justify='center')
-        self.search_company_text.grid(row=5, padx=(30, 0), pady=10)
+        # self.home_page()
+        # self.main_menu_bar()
 
         # Display company information if current company is not None
         if self.current_company is not None:
@@ -89,6 +124,19 @@ class MainGUIApp(Tk):
 
         # Closing app
         self.protocol("WM_DELETE_WINDOW", self.close_application)
+
+    def show_frame(self, page_name):
+        print("Showing: " + page_name)
+        for frame in self.frames.values():
+            frame.grid_remove()
+        frame = self.frames[page_name]
+        frame.grid()
+
+    def show_menu(self, page_name):
+        print("Showing: " + page_name)
+        self.config(menu="")
+        menu = self.menus[page_name]
+        self.config(menu=menu)
 
     def main_menu_bar(self):
         menu_bar = Menu(self)
@@ -294,7 +342,7 @@ class MainGUIApp(Tk):
 
     def testing_print_user_settings(self):
         print(self.current_directory)
-        print(self.current_company)
+        print(self.current_company.get_chosen_company_name())
 
     def autocapitalize_stringvar(self, var):
         if isinstance(var, StringVar):

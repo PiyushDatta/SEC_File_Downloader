@@ -14,3 +14,7 @@ folder as this application, so same folder as
 
 5. Run pdf_file_scraper.py. 
 Example: "python pdf_file_scraper.py --cik_key=320193"
+
+
+
+http://www.dossier-andreas.net/software_architecture/pac.html

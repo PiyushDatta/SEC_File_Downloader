@@ -3,15 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6c74ea74-ebe4-417d-a87d-4c9a0737a091" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppComponents/SECFileDownloader.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppComponents/SECFileDownloader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppComponents/TestComponents.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppComponents/TestComponents.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppComponents/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppComponents/User.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppComponents/cik_ticker.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppComponents/company_information.py" beforeDir="false" afterPath="$PROJECT_DIR$/Archive/company_information.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppComponents/sec_info.db" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/AppGUI/MainGUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppGUI/MainGUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentUser.svc" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentUser.svc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Help.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Help.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Observers/DirectoryObserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/Observers/DirectoryObserver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Observers/FileTypeDetailsObserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/Observers/FileTypeDetailsObserver.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Observers/ObserverInterface.py" beforeDir="false" afterPath="$PROJECT_DIR$/Observers/ObserverInterface.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,21 +22,22 @@
     <session id="1889690571">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.10" value="2" />
+          <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.5" value="3" />
+          <entry key="project.open.time.5" value="4" />
           <entry key="project.open.time.6" value="4" />
-          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.opened" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="js" value="1" />
-          <entry key="py" value="22" />
+          <entry key="py" value="38" />
           <entry key="spec" value="1" />
           <entry key="svc" value="1" />
         </counts>
@@ -50,19 +46,19 @@
         <counts>
           <entry key="JavaScript" value="1" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="22" />
+          <entry key="Python" value="38" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="5" />
-          <entry key="py" value="18210" />
+          <entry key="py" value="23904" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="5" />
-          <entry key="Python" value="18210" />
+          <entry key="Python" value="23904" />
         </counts>
       </usages-collector>
     </session>
@@ -72,114 +68,85 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AppGUI/MainGUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2025">
-              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="274">
+              <caret line="87" column="27" selection-start-line="87" selection-start-column="27" selection-end-line="87" selection-end-column="27" />
               <folding>
                 <element signature="e#22#31#0" expanded="true" />
-                <element signature="e#3587#4059#0" />
-                <marker date="1542947521552" expanded="true" signature="1034:1044" ph="..." />
-                <marker date="1542947521552" expanded="true" signature="7147:8890" ph="..." />
-                <marker date="1542947521552" expanded="true" signature="8149:8155" ph="..." />
-                <marker date="1542947521552" expanded="true" signature="8222:8231" ph="..." />
-                <marker date="1542947521552" expanded="true" signature="8764:8890" ph="..." />
+                <marker date="1543179365922" expanded="true" signature="1250:1260" ph="..." />
+                <marker date="1543179365922" expanded="true" signature="9473:11216" ph="..." />
+                <marker date="1543179365922" expanded="true" signature="10475:10481" ph="..." />
+                <marker date="1543179365922" expanded="true" signature="10548:10557" ph="..." />
+                <marker date="1543179365922" expanded="true" signature="11090:11216" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AppComponents/SECFileDownloader.py">
+        <entry file="file://$PROJECT_DIR$/AppGUI/MainMenuPanel/MainMenuBar.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="40" column="23" lean-forward="true" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="39" />
-              <folding>
-                <element signature="e#157#172#0" expanded="true" />
-                <marker date="1542946768730" expanded="true" signature="459:464" ph="..." />
-                <marker date="1542946768730" expanded="true" signature="2958:2964" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AppComponents/Company.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="15" column="8" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AppComponents/TestComponents.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="172" column="32" lean-forward="true" selection-start-line="172" selection-start-column="32" selection-end-line="172" selection-end-column="42" />
+            <state relative-caret-position="194">
+              <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <element signature="e#882#2333#0" />
-                <element signature="e#2375#2589#0" />
-                <element signature="e#2636#2987#0" />
-                <element signature="e#3026#3979#0" />
-                <element signature="e#4075#4579#0" />
-                <marker date="1542946278946" expanded="true" signature="515:850" ph="..." />
+                <marker date="1543178312667" expanded="true" signature="258:259" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AppComponents/User.py">
+        <entry file="file://$PROJECT_DIR$/AppGUI/TopLayerPanel/TopPanel.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="394">
+              <caret line="102" column="4" lean-forward="true" selection-start-line="102" selection-start-column="4" selection-end-line="103" selection-end-column="40" />
+              <folding>
+                <element signature="e#0#63#0" expanded="true" />
+                <element signature="e#3519#4402#0" />
+                <marker date="1543176952939" expanded="true" signature="218:219" ph="..." />
+                <marker date="1543176952939" expanded="true" signature="218:223" ph="..." />
+                <marker date="1543176952939" expanded="true" signature="3510:3519" ph="..." />
+                <marker date="1543176952939" expanded="true" signature="4424:4527" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AppGUI/TopLayerPanel/TopPanelController.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1054">
+              <caret line="69" column="31" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+                <marker date="1543175216445" expanded="true" signature="177:182" ph="..." />
+                <marker date="1543175216445" expanded="true" signature="473:626" ph="..." />
+                <marker date="1543175216445" expanded="true" signature="1078:1197" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AppGUI/MainGUIActions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="700">
+              <caret line="28" column="51" lean-forward="true" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
+              <folding>
+                <element signature="e#0#51#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AppGUI/MainMenuPanel/MainMenuBarController.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="672">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Observers/ObserverInterface.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Observers/DirectoryObserver.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Observers/FileTypeDetailsObserver.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AppGUI/PopUpWindow/DownloadFileTypeDetailsGUI.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="114" column="8" selection-start-line="114" selection-start-column="8" selection-end-line="114" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-                <marker date="1542861471928" expanded="true" signature="2640:2900" ph="..." />
-                <marker date="1542861471928" expanded="true" signature="2922:3057" ph="..." />
-                <marker date="1542861471928" expanded="true" signature="3594:3599" ph="..." />
+                <marker date="1543137162371" expanded="true" signature="95:100" ph="..." />
               </folding>
             </state>
           </provider>
@@ -206,6 +173,8 @@
       <find>qua</find>
       <find>Quarter</find>
       <find>ChangeDirec</find>
+      <find>search_company_text</find>
+      <find>testing_</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -226,13 +195,21 @@
         <option value="$PROJECT_DIR$/AppGUI/PopUpWindow/DownloadFileTypeDetails.py" />
         <option value="$PROJECT_DIR$/AppGUI/PopUpWindow/ChangeDirectoryGUI.py" />
         <option value="$PROJECT_DIR$/AppGUI/PopUpWindow/DownloadFileTypeDetailsGUI.py" />
-        <option value="$PROJECT_DIR$/Observers/ObserverInterface.py" />
-        <option value="$PROJECT_DIR$/Observers/DirectoryObserver.py" />
-        <option value="$PROJECT_DIR$/Observers/FileTypeDetailsObserver.py" />
         <option value="$PROJECT_DIR$/AppComponents/TestComponents.py" />
         <option value="$PROJECT_DIR$/AppComponents/SECFileDownloader.py" />
-        <option value="$PROJECT_DIR$/AppComponents/User.py" />
         <option value="$PROJECT_DIR$/AppComponents/Company.py" />
+        <option value="$PROJECT_DIR$/AppComponents/User.py" />
+        <option value="$PROJECT_DIR$/Observers/TopPanelObserver.py" />
+        <option value="$PROJECT_DIR$/Observers/ObserverInterface.py" />
+        <option value="$PROJECT_DIR$/Observers/CompanyObserver.py" />
+        <option value="$PROJECT_DIR$/Observers/DirectoryObserver.py" />
+        <option value="$PROJECT_DIR$/Observers/FileTypeDetailsObserver.py" />
+        <option value="$PROJECT_DIR$/AppGUI/MainMenuBar.py" />
+        <option value="$PROJECT_DIR$/AppGUI/MainMenuPanel/MainMenuBarController.py" />
+        <option value="$PROJECT_DIR$/AppGUI/TopLayerPanel/TopPanelController.py" />
+        <option value="$PROJECT_DIR$/AppGUI/TopLayerPanel/TopPanel.py" />
+        <option value="$PROJECT_DIR$/AppGUI/MainGUIActions.py" />
+        <option value="$PROJECT_DIR$/AppGUI/MainMenuPanel/MainMenuBar.py" />
         <option value="$PROJECT_DIR$/AppGUI/MainGUI.py" />
       </list>
     </option>
@@ -266,6 +243,29 @@
             <path>
               <item name="SEC_file_downloader" type="b2602c69:ProjectViewProjectNode" />
               <item name="SEC_file_downloader" type="462c0819:PsiDirectoryNode" />
+              <item name="AppGUI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEC_file_downloader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEC_file_downloader" type="462c0819:PsiDirectoryNode" />
+              <item name="AppGUI" type="462c0819:PsiDirectoryNode" />
+              <item name="MainMenuPanel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEC_file_downloader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEC_file_downloader" type="462c0819:PsiDirectoryNode" />
+              <item name="AppGUI" type="462c0819:PsiDirectoryNode" />
+              <item name="PopUpWindow" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEC_file_downloader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEC_file_downloader" type="462c0819:PsiDirectoryNode" />
+              <item name="AppGUI" type="462c0819:PsiDirectoryNode" />
+              <item name="TopLayerPanel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEC_file_downloader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEC_file_downloader" type="462c0819:PsiDirectoryNode" />
               <item name="Observers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -285,6 +285,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\PD\Documents\Piyush\aaaProgramming\SEC_file_downloader\AppGUI\MainMenuPanel" />
       <recent name="C:\Users\PD\Documents\Piyush\aaaProgramming\SEC_file_downloader\Archive" />
       <recent name="C:\Users\PD\Documents\Piyush\aaaProgramming\SEC_file_downloader\AppGUI" />
       <recent name="C:\Users\PD\Documents\Piyush\aaaProgramming\SEC_file_downloader\AppComponents" />
@@ -480,13 +481,6 @@
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/urllib/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/AppGUI/AutoCompleteDropdownList.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1288">
-          <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AppComponents/SECCompanyList.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1036">
@@ -512,9 +506,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
           <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -522,10 +513,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9660">
           <caret line="359" column="25" selection-start-line="359" selection-start-column="25" selection-end-line="359" selection-end-column="75" />
-          <folding>
-            <element signature="e#137#152#0" expanded="true" />
-            <marker date="1542855043329" expanded="true" signature="1146:2268" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -535,30 +522,6 @@
     <entry file="file://$PROJECT_DIR$/AppComponents/pdf.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Observers/ObserverInterface.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Observers/DirectoryObserver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Observers/FileTypeDetailsObserver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Archive/company_information.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -566,82 +529,160 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
           <caret line="177" column="27" selection-start-line="177" selection-start-column="27" selection-end-line="177" selection-end-column="36" />
-          <folding>
-            <element signature="e#111#126#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppGUI/PopUpWindow/DownloadFileTypeDetailsGUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="114" column="8" selection-start-line="114" selection-start-column="8" selection-end-line="114" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <marker date="1542861471928" expanded="true" signature="2640:2900" ph="..." />
-            <marker date="1542861471928" expanded="true" signature="2922:3057" ph="..." />
-            <marker date="1542861471928" expanded="true" signature="3594:3599" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AppComponents/TestComponents.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="172" column="32" lean-forward="true" selection-start-line="172" selection-start-column="32" selection-end-line="172" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#882#2333#0" />
-            <element signature="e#2375#2589#0" />
-            <element signature="e#2636#2987#0" />
-            <element signature="e#3026#3979#0" />
-            <element signature="e#4075#4579#0" />
-            <marker date="1542946278946" expanded="true" signature="515:850" ph="..." />
-          </folding>
+        <state relative-caret-position="4228">
+          <caret line="172" column="32" selection-start-line="172" selection-start-column="32" selection-end-line="172" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AppComponents/User.py">
+    <entry file="file://$PROJECT_DIR$/AppGUI/PopUpWindow/DownloadFileTypeDetailsGUI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="2996">
+          <caret line="114" column="8" selection-start-line="114" selection-start-column="8" selection-end-line="114" selection-end-column="25" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/AppGUI/AutoCompleteDropdownList.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Observers/TopPanelObserver.py" />
     <entry file="file://$PROJECT_DIR$/AppComponents/SECFileDownloader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="40" column="23" lean-forward="true" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="39" />
+        <state relative-caret-position="624">
+          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Observers/DirectoryObserver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="39" selection-start-column="39" selection-end-column="39" />
           <folding>
-            <element signature="e#157#172#0" expanded="true" />
-            <marker date="1542946768730" expanded="true" signature="459:464" ph="..." />
-            <marker date="1542946768730" expanded="true" signature="2958:2964" ph="..." />
+            <marker date="1543097224194" expanded="true" signature="379:421" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Observers/FileTypeDetailsObserver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Observers/ObserverInterface.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Observers/CompanyObserver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AppComponents/Company.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="15" column="8" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="31" />
+        <state relative-caret-position="336">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppComponents/User.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="11" column="64" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppGUI/MainMenuPanel/MainMenuBarController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <marker date="1543137162371" expanded="true" signature="95:100" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppGUI/MainGUIActions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="28" column="51" lean-forward="true" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppGUI/TopLayerPanel/TopPanelController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="69" column="31" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+            <marker date="1543175216445" expanded="true" signature="177:182" ph="..." />
+            <marker date="1543175216445" expanded="true" signature="473:626" ph="..." />
+            <marker date="1543175216445" expanded="true" signature="1078:1197" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppGUI/TopLayerPanel/TopPanel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="102" column="4" lean-forward="true" selection-start-line="102" selection-start-column="4" selection-end-line="103" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#63#0" expanded="true" />
+            <element signature="e#3519#4402#0" />
+            <marker date="1543176952939" expanded="true" signature="218:219" ph="..." />
+            <marker date="1543176952939" expanded="true" signature="218:223" ph="..." />
+            <marker date="1543176952939" expanded="true" signature="3510:3519" ph="..." />
+            <marker date="1543176952939" expanded="true" signature="4424:4527" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppGUI/MainMenuPanel/MainMenuBar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <marker date="1543178312667" expanded="true" signature="258:259" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AppGUI/MainGUI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2025">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="274">
+          <caret line="87" column="27" selection-start-line="87" selection-start-column="27" selection-end-line="87" selection-end-column="27" />
           <folding>
             <element signature="e#22#31#0" expanded="true" />
-            <element signature="e#3587#4059#0" />
-            <marker date="1542947521552" expanded="true" signature="1034:1044" ph="..." />
-            <marker date="1542947521552" expanded="true" signature="7147:8890" ph="..." />
-            <marker date="1542947521552" expanded="true" signature="8149:8155" ph="..." />
-            <marker date="1542947521552" expanded="true" signature="8222:8231" ph="..." />
-            <marker date="1542947521552" expanded="true" signature="8764:8890" ph="..." />
+            <marker date="1543179365922" expanded="true" signature="1250:1260" ph="..." />
+            <marker date="1543179365922" expanded="true" signature="9473:11216" ph="..." />
+            <marker date="1543179365922" expanded="true" signature="10475:10481" ph="..." />
+            <marker date="1543179365922" expanded="true" signature="10548:10557" ph="..." />
+            <marker date="1543179365922" expanded="true" signature="11090:11216" ph="..." />
           </folding>
         </state>
       </provider>
