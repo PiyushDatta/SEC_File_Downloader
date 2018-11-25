@@ -35,7 +35,7 @@ class MainMenu(tk.Menu):
                               command=self.menu_controller.testing_print_user_settings)
 
         # If user wants to quit the program entirely
-        file_menu.add_command(label="Quit!", command=self.close_application)
+        file_menu.add_command(label="Quit!", command=self.controller.close_application)
 
     def show_change_directory_gui(self):
         # Initialize ChangeDirectoryGUI if user wants to open that window
@@ -47,8 +47,8 @@ class MainMenu(tk.Menu):
     def get_controller(self):
         return self.menu_controller
 
-    def close_application(self):
-        if messagebox.askokcancel("Quit", "Do you want to quit?"):
-            print("Saving and closing application.")
-            self.menu_controller.save_user_details()
-            return self.controller.destroy()
+    # def close_application(self):
+    #     if messagebox.askokcancel("Quit", "Do you want to quit?"):
+    #         print("Saving and closing application.")
+    #         self.menu_controller.save_user_details()
+    #         return self.controller.close_application()
