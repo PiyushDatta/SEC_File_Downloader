@@ -1,17 +1,13 @@
-import math
-import sys
-import tkinter as root
+import tkinter as tk
+from tkinter import Label, StringVar, Entry, Button
 
-from AppGUI import MainGUI
-from Observers import DirectoryObserver
-
-from tkinter import Tk, Menu, Label, StringVar, OptionMenu, Entry, Button, messagebox, Canvas, HORIZONTAL
+from AppGUI.PopUpWindow.FileDownloadsProgressBar import DownloadsProgressBar
 
 
-class FileTypeDetailsGUI(Tk):
-    def __init__(self, main_gui, directory_observer, window_title, window_width, window_length, icon_path):
+class FileTypeDetailsGUI(tk.Tk):
+    def __init__(self, downloads_panels_controller, window_title, window_width, window_length, icon_path):
         # Window settings
-        Tk.__init__(self)
+        tk.Tk.__init__(self)
         self.title(window_title)
 
         self.iconbitmap(icon_path)
@@ -25,14 +21,10 @@ class FileTypeDetailsGUI(Tk):
         y = (hs / 2) - (window_length / 2)
         self.geometry('%dx%d+%d+%d' % (window_width, window_length, x, y))
 
+        self.downloads_panel_controller = downloads_panels_controller
+
         # Initialize current directory as none then get update from observer
         self.current_directory = None
-
-        # Make an observer a set
-        self._observers = set()
-
-        # Add DirectoryObserver
-        self.attach_observer(directory_observer)
 
         self.prior_to_date = None
 
@@ -42,14 +34,12 @@ class FileTypeDetailsGUI(Tk):
 
         self.ret_list = None
 
-        self.main_gui = main_gui
-
         self.prior_to_date_widget()
         self.file_type_widget()
         self.file_count_widget()
         self.confirmation_button()
 
-        # self.protocol("WM_DELETE_WINDOW", self.close_application)
+        self.protocol("WM_DELETE_WINDOW", self.close_application)
 
     def prior_to_date_widget(self):
         self.prior_to_date = StringVar()
@@ -86,32 +76,17 @@ class FileTypeDetailsGUI(Tk):
 
     def confirmation_button(self):
         confirm_button = Button(self, text="Confirm",
-                                command=self.get_details,
+                                command=self.send_to_progress_bar,
                                 height=1,
                                 width=15)
         confirm_button.grid(row=4, padx=10, pady=(10, 0))
 
-    def get_details(self):
-        self.ret_list = [self.prior_to_date.get(), self.file_type.get(), self.file_count.get()]
+    def send_to_progress_bar(self):
         self.close_application()
-
-    def attach_observer(self, observer):
-        self.current_directory = observer.get_directory()
-        observer._subject = self
-        self._observers.add(observer)
-
-    def detach_observer(self, observer):
-        observer._subject = None
-        self._observers.discard(observer)
-
-    def _notify_observer(self):
-        for observer in self._observers:
-            observer.update(self.current_directory)
-
-    def send_to_main_gui(self):
-        self.main_gui.download_file_type(self.ret_list[0], self.ret_list[1], self.ret_list[2])
+        DownloadsProgressBar(self.downloads_panel_controller, "Download Progress", 550, 150,
+                             self.iconbitmap, self.prior_to_date.get(), self.file_type.get(), self.file_count.get())
 
     # Close application
     def close_application(self):
         print("Closing FileTypeDetailsGUI application.")
-        return self.destroy
+        return self.destroy()

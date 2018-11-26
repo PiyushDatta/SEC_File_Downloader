@@ -81,7 +81,7 @@ class TopPanel(tk.Frame):
 
     def restart_panel(self):
         self.refresh_panel()
-        self.controller.show_frame("AppGUI.TopLayerPanel.TopPanel")
+        self.controller.show_top_panel_frame()
 
     def refresh_panel(self):
 

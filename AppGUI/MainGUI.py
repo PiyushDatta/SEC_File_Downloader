@@ -14,6 +14,7 @@ from urllib.request import urlopen, Request
 from AppGUI.MainGUIActions import MainGUIActions
 from AppGUI.PopUpWindow import ChangeDirectoryGUI, DownloadFileTypeDetailsGUI
 from AppGUI.TopLayerPanel import TopPanel
+from AppGUI.FileDownloadPanel import FileDownloadsPanel
 from AppGUI.MainMenuPanel import MainMenuBar
 from AppComponents.User import CurrentUser, Company
 from AppComponents import SECCompanyList
@@ -77,11 +78,23 @@ class MainGUIApp(tk.Tk):
 
         # Add all our frames
         self.frames = {}
-        for F in (TopPanel,):
+        for F in (TopPanel, FileDownloadsPanel):
             page_name = F.__name__
-            self.top_panel = F.TopPanel(parent_frame=container, controller=self,
-                                        current_directory=self.current_directory, current_company=self.current_company)
-            self.frames[page_name] = self.top_panel
+            print(page_name)
+            # Top Panel
+            if page_name == "AppGUI.TopLayerPanel.TopPanel":
+                self.top_panel = F.TopPanel(parent_frame=container, controller=self,
+                                            current_directory=self.current_directory,
+                                            current_company=self.current_company)
+                self.frames[page_name] = self.top_panel
+
+            # Downloads Panel
+            if page_name == "AppGUI.FileDownloadPanel.FileDownloadsPanel":
+                self.downloads_panel = F.DownloadPanel(parent_frame=container, controller=self,
+                                                       current_directory=self.current_directory,
+                                                       current_company=self.current_company,
+                                                       icon=self.icon)
+                self.frames[page_name] = self.downloads_panel
 
         # Add all our menus
         self.menus = {}
@@ -96,29 +109,38 @@ class MainGUIApp(tk.Tk):
         self.main_gui_actions = MainGUIActions(self.current_directory,
                                                self.current_company,
                                                self.top_panel.get_controller(),
+                                               self.downloads_panel.get_controller(),
                                                self.main_menu.get_controller())
         self.main_gui_actions.set_observer_targets()
         self.main_gui_actions.set_all_controller_observers()
 
         # Show TopPanel
-        self.show_frame("AppGUI.TopLayerPanel.TopPanel")
+        self.show_top_panel_frame()
+
+        # Show DownloadsPanel (consists of download buttons)
+        self.show_downloads_panel_frame()
 
         # Show Menu bar
         self.show_menu("AppGUI.MainMenuPanel.MainMenuBar")
 
         # Display company information if current company is not None
-        if self.current_company is not None:
-            self.company_information()
+        # if self.current_company is not None:
+        #     self.company_information()
 
         # Closing app
         self.protocol("WM_DELETE_WINDOW", self.close_application)
 
-    def show_frame(self, page_name):
-        print("Showing: " + page_name)
-        for frame in self.frames.values():
-            frame.grid_remove()
-        frame = self.frames[page_name]
-        frame.grid()
+    def show_top_panel_frame(self):
+        print("Showing: " + "AppGUI.TopLayerPanel.TopPanel")
+        top_panel_frame = self.frames["AppGUI.TopLayerPanel.TopPanel"]
+        top_panel_frame.grid_remove()
+        top_panel_frame.grid(row=1, column=1)
+
+    def show_downloads_panel_frame(self):
+        print("Showing: " + "AppGUI.FileDownloadPanel.FileDownloadsPanel")
+        downloads_panel_frame = self.frames["AppGUI.FileDownloadPanel.FileDownloadsPanel"]
+        downloads_panel_frame.grid_remove()
+        downloads_panel_frame.grid(row=2, column=1, sticky="w")
 
     def show_menu(self, page_name):
         print("Showing: " + page_name)
@@ -126,40 +148,40 @@ class MainGUIApp(tk.Tk):
         menu = self.menus[page_name]
         self.config(menu=menu)
 
-    def company_information(self):
+    # def company_information(self):
+    #
+    #     # Enter button to select the company
+    #     # Enter button to select the company
+    #     search_company_button = Button(self, text="Download 10k",
+    #                                    command=self.show_file_type_details_gui,
+    #                                    height=1,
+    #                                    width=15)
+    #     search_company_button.grid(row=6, sticky='w', padx=(10, 9), )
 
-        # Enter button to select the company
-        # Enter button to select the company
-        search_company_button = Button(self, text="Download 10k",
-                                       command=self.show_file_type_details_gui,
-                                       height=1,
-                                       width=15)
-        search_company_button.grid(row=6, sticky='w', padx=(10, 9), )
+    #
+    # ten_k_annual_reports_downloader = Button(self, text="Search",
+    #                                command=lambda: sec_file_downloader.down
+    #                                height=1,
+    #                                width=15)
 
-        #
-        # ten_k_annual_reports_downloader = Button(self, text="Search",
-        #                                command=lambda: sec_file_downloader.down
-        #                                height=1,
-        #                                width=15)
+    # def show_file_type_details_gui(self):
+    #
+    #     self.file_type_details_gui = DownloadFileTypeDetailsGUI.FileTypeDetailsGUI(
+    #         self,
+    #         directory_observer=self.directory_observer,
+    #         window_title="File Type Details",
+    #         window_width=550, window_length=150,
+    #         icon_path=self.icon)
 
-    def show_file_type_details_gui(self):
-
-        self.file_type_details_gui = DownloadFileTypeDetailsGUI.FileTypeDetailsGUI(
-            self,
-            directory_observer=self.directory_observer,
-            window_title="File Type Details",
-            window_width=550, window_length=150,
-            icon_path=self.icon)
-
-    def download_file_type(self, prior_to_date, file_type, file_count):
-        # Initialize our SEC EDGAR file downloader
-        self.sec_file_downloader.get_company_file_type(self.current_company,
-                                                       "320193",
-                                                       file_type,
-                                                       prior_to_date,
-                                                       count=file_count)
-        # self.file_type_details_gui.close_application()
-        # self.confirmation_of_download()
+    # def download_file_type(self, prior_to_date, file_type, file_count):
+    #     # Initialize our SEC EDGAR file downloader
+    #     self.sec_file_downloader.get_company_file_type(self.current_company,
+    #                                                    "320193",
+    #                                                    file_type,
+    #                                                    prior_to_date,
+    #                                                    count=file_count)
+    #     # self.file_type_details_gui.close_application()
+    #     # self.confirmation_of_download()
 
     def confirmation_of_download(self):
         T = Text(self, height=2, width=30)
@@ -207,49 +229,9 @@ class MainGUIApp(tk.Tk):
 
         print("Saved user settings")
 
-    def attach_observer(self, observer):
-        observer._subject = self
-        self._observers.add(observer)
-
-    def detach_observer(self, observer):
-        observer._subject = None
-        self._observers.discard(observer)
-
-    def _notify_observer(self, type_of_observer):
-        for observer in self._observers:
-            if type_of_observer is "directory_observer" and observer is self.directory_observer:
-                observer.update(self.current_directory)
-
-    def update_from_observer(self):
-        print("Updating from observers")
-        for observer in self._observers:
-            # Update our current directory from DirectoryObserver
-            if observer is isinstance(observer, DirectoryObserver.CurrentDirectoryObserver):
-                self.current_directory = observer.get_directory()
-
-    def update_current_company(self, new_company):
-        if new_company is None:
-            self.current_company = None
-            self.sec_file_downloader.set_current_company(self.current_company)
-            self.search_company_text.config(text="No company selected / Wrong company name selected")
-        else:
-            self.current_company = new_company
-            self.sec_file_downloader.set_current_company(self.current_company)
-            self.search_company_text.config(text=self.current_company.get_chosen_company_name())
-
-    def testing_print_user_settings(self):
-        print(self.current_directory)
-        print(self.current_company.get_chosen_company_name())
-
-    def autocapitalize_stringvar(self, var):
-        if isinstance(var, StringVar):
-            var.set(var.get().upper())
-
 
 def main():
     main_window = MainGUIApp("SEC Edgar File Downloader", 1000, 600)
-    # directory_observer = DirectoryObserver.CurrentDirectoryObserver()
-    # main_window.attach_observer(directory_observer)
     main_window.mainloop()
 
 
