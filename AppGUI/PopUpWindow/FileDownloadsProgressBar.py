@@ -1,7 +1,11 @@
+import queue
+import threading
 import time
 import tkinter as tk
 from tkinter import Label, messagebox, HORIZONTAL, CENTER, LEFT
 from tkinter.ttk import Progressbar
+
+from AppComponents.ThreadingClient import ThreadedClient
 
 
 class DownloadsProgressBar(tk.Tk):
@@ -30,11 +34,12 @@ class DownloadsProgressBar(tk.Tk):
         self.file_type = file_type
         self.file_count = file_count
 
-        self.show_file_details()
-        self.show_progress_bar()
-        self.run_progress_bar()
+        self.sender_queue = queue.Queue()
+        self.return_queue = queue.Queue()
 
-        # self.protocol("WM_DELETE_WINDOW", self.close_application)
+        self.show_progress_bar()
+        self.show_file_details()
+        self.run_progress_bar()
 
     def show_file_details(self):
         prior_to_space = "Prior to date (YYYY/MM/DD):   "
@@ -50,23 +55,50 @@ class DownloadsProgressBar(tk.Tk):
     def show_progress_bar(self):
         self.progress_bar = Progressbar(self, orient=HORIZONTAL, length=500, mode='determinate')
         self.progress_bar.grid(row=3, column=1, sticky="w", pady=(20, 0), padx=(20, 0))
+        self.progress_bar.start()
 
     def run_progress_bar(self):
-        self.progress_bar['maximum'] = 100
+        # Show our progress bar
+        self.progress_bar['value'] = 0
+        self.progress_bar.update()
 
-        for i in range(101):
-            time.sleep(0.1)
-            self.progress_bar["value"] = i
+        # Set up our sender queue to send variables to downloads_panels_controller
+        self.sender_queue.put(self.prior_to_date)
+        self.sender_queue.put(self.file_type)
+        self.sender_queue.put(self.file_count)
+
+        # Start first thread to generate html file urls and file names
+        t1 = threading.Thread(target=self.downloads_panel_controller.get_html_files_for_conversion,
+                              args=(self.sender_queue, self.return_queue,))
+        t1.start()
+        t1.join()
+
+        # Get the html file urls and file names as a dict
+        results = self.return_queue.get()
+
+        # Set our progress bar max to the length of the results, so we can evenly step/progress the bar
+        # by equal portions in our for loop in the next line
+        self.progress_bar['maximum'] = len(results)
+
+        # Loop over the key (file name) and value (url) of the dict results.
+        # During the for loop, start our second thread for downloads_panel_controller and
+        # also progress our progress bar by 1 each time.
+        for key, value in results.items():
+            t2 = threading.Thread(target=self.downloads_panel_controller.download_one_file,
+                                  args=(value, key,))
+            t2.start()
+            t2.join()
+            self.progress_bar.step(1 / len(results))
             self.progress_bar.update()
 
-        self.download_confirmation_dialog()
+        # Update our progress bar with value of max to show we're done
+        self.progress_bar['value'] = self.progress_bar['maximum']
+        self.progress_bar.update()
 
-    def send_to_file_downloads_controller(self):
-        self.downloads_panel_controller.download_files(self.prior_to_date.get(), self.file_type.get(),
-                                                       self.file_count.get())
-        self.close_application()
+        # Show our confirmation of download dialog
+        self.show_download_confirmation_dialog()
 
-    def download_confirmation_dialog(self):
+    def show_download_confirmation_dialog(self):
         messagebox.showinfo(title="Download Status", message="All files downloaded!")
         self.close_application()
 

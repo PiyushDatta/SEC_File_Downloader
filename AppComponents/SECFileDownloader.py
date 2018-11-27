@@ -16,8 +16,6 @@ import requests
 import sys
 from urllib.request import urlopen, Request
 
-
-
 # Get methods from SQL db file
 from AppComponents import SEC_sql_database as my_sql
 
@@ -86,16 +84,20 @@ class FileDownloader:
             res = self.get_file_type_htm_links(link, "a", int(count))
 
         # Translate each htm into pdf and save it to an Annual Reports folder
+        ret_dict = {}
         for html_link in res:
             new_pdf_file_name = "\\" + html_link.rsplit('/', 1)[-1].rsplit('.', 1)[0] + ".pdf"
-            self.html_to_pdf_directly(html_link,
-                                      self.current_directory,
-                                      company_name.replace(" ", ""),
-                                      file_type,
-                                      new_pdf_file_name)
+            ret_dict[new_pdf_file_name] = html_link
+            # self.html_to_pdf_directly(html_link,
+            #                           self.current_directory,
+            #                           company_name.replace(" ", ""),
+            #                           file_type,
+            #                           new_pdf_file_name)
 
-        print()
-        print("Printed all " + file_type + " for: " + company_name + "!")
+        print("Put file links into dict!")
+        return ret_dict
+        # print()
+        # print("Printed all " + file_type + " for: " + company_name + "!")
 
     def html_to_pdf_directly(self, request, parent_path, company_name, file_type, pdf_file_name):
         # Config path to wkhtmltopdf, this exe file is needed for pdfkit
