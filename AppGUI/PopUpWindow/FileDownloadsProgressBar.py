@@ -101,17 +101,18 @@ class DownloadsProgressBar(tk.Tk):
         # During the for loop, start our second thread for downloads_panel_controller and
         # also progress our progress bar by 1 each time.
         progress_percent_count = 1
-
+        backup = sys.stdout
         for key, value in iter(results.items()):
+            sys.stdout = io.StringIO()
             t2 = threading.Thread(target=self.downloads_panel_controller.download_one_file,
                                   args=(value, key,))
             t2.start()
+            self.progress_bar_text['text'] = "Getting: " + sys.stdout.getvalue()
             t2.join()
-            # stdout = sys.stdout
-            # sys.stdout = io.StringIO()
-            # output = sys.stdout.getvalue()
-            # sys.stdout = stdout
-            # self.progress_bar_text['text'] = output
+            sys.stdout.close()
+
+            sys.stdout = backup
+
             self.progress_bar.step(1 / len(results.items()))
             self.progress_bar_percent['text'] = "{0:.0%}".format(progress_percent_count / len(results.items()))
             self.progress_bar.update()
