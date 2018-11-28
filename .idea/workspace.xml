@@ -4,98 +4,11 @@
     <list default="true" id="6c74ea74-ebe4-417d-a87d-4c9a0737a091" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppGUI/FileDownloadPanel/FileDownloadsPanel.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppGUI/FileDownloadPanel/FileDownloadsPanel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppGUI/MainGUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppGUI/MainGUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppGUI/PopUpWindow/ChangeDirectoryGUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppGUI/PopUpWindow/ChangeDirectoryGUI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppGUI/PopUpWindow/DownloadFileTypeDetailsGUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppGUI/PopUpWindow/DownloadFileTypeDetailsGUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup_db/sec_info_backup.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backup_db/sec_info_backup_2.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sec__edgar_company_info.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sec_info.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/tcl8.6/init.tcl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/Activate.ps1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/_asyncio.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/_bz2.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/_ctypes.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/_ctypes_test.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/_decimal.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/_distutils_findvs.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/_elementtree.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/_hashlib.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/_lzma.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/_msi.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/_multiprocessing.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/_overlapped.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/_socket.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/_sqlite3.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/_ssl.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/_testbuffer.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/_testcapi.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/_testconsole.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/_testimportmultiple.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/_testmultiphase.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/_tkinter.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/activate" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/activate.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-core-console-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-core-datetime-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-core-debug-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-core-errorhandling-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-core-file-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-core-file-l1-2-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-core-file-l2-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-core-handle-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-core-heap-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-core-interlocked-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-core-libraryloader-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-core-localization-l1-2-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-core-memory-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-core-namedpipe-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-core-processenvironment-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-core-processthreads-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-core-processthreads-l1-1-1.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-core-profile-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-core-rtlsupport-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-core-string-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-core-synch-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-core-synch-l1-2-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-core-sysinfo-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-core-timezone-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-core-util-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-crt-conio-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-crt-convert-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-crt-environment-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-crt-filesystem-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-crt-heap-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-crt-locale-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-crt-math-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-crt-multibyte-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-crt-private-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-crt-process-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-crt-runtime-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-crt-stdio-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-crt-string-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-crt-time-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/api-ms-win-crt-utility-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/concrt140.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/deactivate.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/msvcp140.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/msvcp140_1.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/msvcp140_2.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/pyexpat.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/python.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/python3.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/python36.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/pythonw.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/qt.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/select.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/sqlite3.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/tcl86t.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/tk86t.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/ucrtbase.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/unicodedata.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/vccorlib140.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/vcomp140.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/vcruntime140.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/winsound.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/pyvenv.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppGUI/PopUpWindow/FileDownloadsProgressBar.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppGUI/PopUpWindow/FileDownloadsProgressBar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppGUI/TopLayerPanel/TopPanel.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppGUI/TopLayerPanel/TopPanel.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -125,7 +38,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="js" value="1" />
-          <entry key="py" value="58" />
+          <entry key="py" value="67" />
           <entry key="spec" value="1" />
           <entry key="svc" value="1" />
         </counts>
@@ -134,49 +47,50 @@
         <counts>
           <entry key="JavaScript" value="1" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="58" />
+          <entry key="Python" value="67" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="5" />
-          <entry key="py" value="31648" />
+          <entry key="py" value="32461" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="5" />
-          <entry key="Python" value="31648" />
+          <entry key="Python" value="32461" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/AppGUI/FileDownloadPanel/FileDownloadsPanel.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AppGUI/PopUpWindow/DownloadFileTypeDetailsGUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
+            <state relative-caret-position="302">
+              <caret line="95" column="100" selection-start-line="95" selection-start-column="100" selection-end-line="95" selection-end-column="100" />
               <folding>
-                <element signature="e#0#89#0" expanded="true" />
-                <marker date="1543375174833" expanded="true" signature="229:234" ph="..." />
+                <element signature="e#0#20#0" expanded="true" />
+                <marker date="1543379111133" expanded="true" signature="2569:2807" ph="..." />
+                <marker date="1543379111133" expanded="true" signature="3417:3421" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AppGUI/PopUpWindow/DownloadFileTypeDetailsGUI.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/AppGUI/PopUpWindow/FileDownloadsProgressBar.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1254">
-              <caret line="94" column="49" selection-start-line="94" selection-start-column="49" selection-end-line="94" selection-end-column="49" />
+            <state relative-caret-position="127">
+              <caret line="66" column="79" selection-start-line="66" selection-start-column="79" selection-end-line="66" selection-end-column="79" />
               <folding>
-                <element signature="e#0#20#0" expanded="true" />
-                <element signature="e#2071#2426#0" />
-                <element signature="e#2471#2725#0" />
-                <marker date="1543374694108" expanded="true" signature="2546:2810" ph="..." />
-                <marker date="1543374694108" expanded="true" signature="3369:3373" ph="..." />
+                <element signature="e#0#12#0" expanded="true" />
+                <marker date="1543379440979" expanded="true" signature="2440:2614" ph="..." />
+                <marker date="1543379440979" expanded="true" signature="2647:2656" ph="..." />
+                <marker date="1543379440979" expanded="true" signature="2647:2842" ph="..." />
+                <marker date="1543379440979" expanded="true" signature="2838:2842" ph="..." />
               </folding>
             </state>
           </provider>
@@ -185,45 +99,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AppGUI/FileDownloadPanel/FileDownloadsPanelController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
+            <state relative-caret-position="78">
               <caret line="41" selection-start-line="41" selection-end-line="41" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
                 <marker date="1543372092048" expanded="true" signature="1232:1237" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AppComponents/SECFileDownloader.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="81" column="36" selection-start-line="81" selection-start-column="36" selection-end-line="81" selection-end-column="36" />
-              <folding>
-                <element signature="e#157#166#0" expanded="true" />
-                <marker date="1543372092031" expanded="true" signature="344:349" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AppComponents/TestComponents.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="48" column="8" selection-start-line="48" selection-start-column="8" selection-end-line="50" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AppComponents/ThreadingClient.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-              <folding>
-                <element signature="e#0#16#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -271,7 +151,6 @@
         <option value="$PROJECT_DIR$/AppComponents/SEC_sql_database.py" />
         <option value="$PROJECT_DIR$/AppComponents/ThreadingClient.py" />
         <option value="$PROJECT_DIR$/AppGUI/PopUpWindow/DownloadFileTypeDetails.py" />
-        <option value="$PROJECT_DIR$/AppGUI/PopUpWindow/ChangeDirectoryGUI.py" />
         <option value="$PROJECT_DIR$/AppComponents/Company.py" />
         <option value="$PROJECT_DIR$/AppComponents/User.py" />
         <option value="$PROJECT_DIR$/Observers/TopPanelObserver.py" />
@@ -282,16 +161,17 @@
         <option value="$PROJECT_DIR$/AppGUI/MainMenuBar.py" />
         <option value="$PROJECT_DIR$/AppGUI/MainMenuPanel/MainMenuBarController.py" />
         <option value="$PROJECT_DIR$/AppGUI/TopLayerPanel/TopPanelController.py" />
-        <option value="$PROJECT_DIR$/AppGUI/MainMenuPanel/MainMenuBar.py" />
         <option value="$PROJECT_DIR$/AppGUI/MainGUIActions.py" />
-        <option value="$PROJECT_DIR$/AppGUI/TopLayerPanel/TopPanel.py" />
-        <option value="$PROJECT_DIR$/AppGUI/MainGUI.py" />
         <option value="$PROJECT_DIR$/AppComponents/TestComponents.py" />
         <option value="$PROJECT_DIR$/AppComponents/SECFileDownloader.py" />
         <option value="$PROJECT_DIR$/AppGUI/FileDownloadPanel/FileDownloadsPanelController.py" />
-        <option value="$PROJECT_DIR$/AppGUI/PopUpWindow/FileDownloadsProgressBar.py" />
-        <option value="$PROJECT_DIR$/AppGUI/PopUpWindow/DownloadFileTypeDetailsGUI.py" />
+        <option value="$PROJECT_DIR$/AppGUI/MainGUI.py" />
+        <option value="$PROJECT_DIR$/AppGUI/MainMenuPanel/MainMenuBar.py" />
+        <option value="$PROJECT_DIR$/AppGUI/TopLayerPanel/TopPanel.py" />
         <option value="$PROJECT_DIR$/AppGUI/FileDownloadPanel/FileDownloadsPanel.py" />
+        <option value="$PROJECT_DIR$/AppGUI/PopUpWindow/ChangeDirectoryGUI.py" />
+        <option value="$PROJECT_DIR$/AppGUI/PopUpWindow/DownloadFileTypeDetailsGUI.py" />
+        <option value="$PROJECT_DIR$/AppGUI/PopUpWindow/FileDownloadsProgressBar.py" />
       </list>
     </option>
   </component>
@@ -332,12 +212,6 @@
               <item name="SEC_file_downloader" type="462c0819:PsiDirectoryNode" />
               <item name="AppGUI" type="462c0819:PsiDirectoryNode" />
               <item name="FileDownloadPanel" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEC_file_downloader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEC_file_downloader" type="462c0819:PsiDirectoryNode" />
-              <item name="AppGUI" type="462c0819:PsiDirectoryNode" />
-              <item name="MainMenuPanel" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SEC_file_downloader" type="b2602c69:ProjectViewProjectNode" />
@@ -515,13 +389,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14342366" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.41702127" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.42411348" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49966952" weight="0.39858156" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -571,13 +446,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1036">
           <caret line="40" column="45" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppGUI/PopUpWindow/ChangeDirectoryGUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2464">
-          <caret line="93" column="20" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -682,17 +550,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AppGUI/MainGUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#22#31#0" expanded="true" />
-            <marker date="1543276524549" expanded="true" signature="775:836" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/threading.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -730,32 +587,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AppGUI/MainMenuPanel/MainMenuBar.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="37" column="86" selection-start-line="37" selection-start-column="86" selection-end-line="37" selection-end-column="86" />
+        <state relative-caret-position="84">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AppGUI/PopUpWindow/FileDownloadsProgressBar.py">
+    <entry file="file://$PROJECT_DIR$/AppGUI/MainGUI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1055">
-          <caret line="82" column="60" selection-start-line="82" selection-start-column="60" selection-end-line="82" selection-end-column="60" />
+        <state relative-caret-position="-1988">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
           <folding>
-            <element signature="e#0#12#0" expanded="true" />
-            <marker date="1543372608725" expanded="true" signature="2226:2231" ph="..." />
+            <marker date="1543376268381" expanded="true" signature="799:860" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AppGUI/TopLayerPanel/TopPanel.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="56" column="47" lean-forward="true" selection-start-line="56" selection-start-column="47" selection-end-line="56" selection-end-column="54" />
+        <state relative-caret-position="-52">
+          <caret line="58" column="46" selection-start-line="58" selection-start-column="46" selection-end-line="58" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppGUI/PopUpWindow/ChangeDirectoryGUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1288">
+          <caret line="46" column="37" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppGUI/FileDownloadPanel/FileDownloadsPanel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="26" column="87" selection-start-line="26" selection-start-column="87" selection-end-line="26" selection-end-column="87" />
+          <folding>
+            <element signature="e#0#89#0" expanded="true" />
+            <marker date="1543376953701" expanded="true" signature="233:238" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AppGUI/FileDownloadPanel/FileDownloadsPanelController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
+        <state relative-caret-position="78">
           <caret line="41" selection-start-line="41" selection-end-line="41" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
@@ -766,25 +646,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AppGUI/PopUpWindow/DownloadFileTypeDetailsGUI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1254">
-          <caret line="94" column="49" selection-start-line="94" selection-start-column="49" selection-end-line="94" selection-end-column="49" />
+        <state relative-caret-position="302">
+          <caret line="95" column="100" selection-start-line="95" selection-start-column="100" selection-end-line="95" selection-end-column="100" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
-            <element signature="e#2071#2426#0" />
-            <element signature="e#2471#2725#0" />
-            <marker date="1543374694108" expanded="true" signature="2546:2810" ph="..." />
-            <marker date="1543374694108" expanded="true" signature="3369:3373" ph="..." />
+            <marker date="1543379111133" expanded="true" signature="2569:2807" ph="..." />
+            <marker date="1543379111133" expanded="true" signature="3417:3421" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AppGUI/FileDownloadPanel/FileDownloadsPanel.py">
+    <entry file="file://$PROJECT_DIR$/AppGUI/PopUpWindow/FileDownloadsProgressBar.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
+        <state relative-caret-position="127">
+          <caret line="66" column="79" selection-start-line="66" selection-start-column="79" selection-end-line="66" selection-end-column="79" />
           <folding>
-            <element signature="e#0#89#0" expanded="true" />
-            <marker date="1543375174833" expanded="true" signature="229:234" ph="..." />
+            <element signature="e#0#12#0" expanded="true" />
+            <marker date="1543379440979" expanded="true" signature="2440:2614" ph="..." />
+            <marker date="1543379440979" expanded="true" signature="2647:2656" ph="..." />
+            <marker date="1543379440979" expanded="true" signature="2647:2842" ph="..." />
+            <marker date="1543379440979" expanded="true" signature="2838:2842" ph="..." />
           </folding>
         </state>
       </provider>

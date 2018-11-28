@@ -8,7 +8,6 @@ from Observers import DirectoryObserver
 
 class ChangeDirectoryGUI:
     def __init__(self, directory_observer, window_title, window_width, window_length, icon_path):
-
         # Window settings
         self.window = root.Tk()
         self.window.title(window_title)
@@ -47,12 +46,6 @@ class ChangeDirectoryGUI:
         # Initialize current directory as none then get update from observer
         self.current_directory = None
 
-        # Make an observer a set
-        self._observers = set()
-
-        # Add DirectoryObserver
-        self.attach_observer(directory_observer)
-
         # Display buttons and input bar (Qline)
         # if self.current_directory is None:
         #     self.container_lay.addWidget(QtGui.QLabel("No current directory set"))
@@ -63,30 +56,17 @@ class ChangeDirectoryGUI:
         # self.ans = QtGui.QLabel()
         # self.container_lay.addWidget(self.ans)
 
-    def attach_observer(self, observer):
-        self.current_directory = observer.get_directory()
-        observer._subject = self
-        self._observers.add(observer)
-
-    def detach_observer(self, observer):
-        observer._subject = None
-        self._observers.discard(observer)
-
-    def _notify_observer(self):
-        for observer in self._observers:
-            observer.update(self.current_directory)
-
     # Print the directory in the window if the user wants to check what they typed in
     # def print_directory_to_user(self):
-        # chosen_directory = self.le.text()
-        # self.ans.setText(chosen_directory)
+    # chosen_directory = self.le.text()
+    # self.ans.setText(chosen_directory)
 
     # Save the inputted directory as the current working directory where are all files are stored
     # def save_directory_to_current(self):
-        # self._notify_observer()
-        # confirmation_messagebox = QtGui.QMessageBox()
-        # self.confirmation_messagebox.about("Confirmation", "All files will be now saved to: " + str(current_directory))
-        # self.confirmation_messagebox.close()
+    # self._notify_observer()
+    # confirmation_messagebox = QtGui.QMessageBox()
+    # self.confirmation_messagebox.about("Confirmation", "All files will be now saved to: " + str(current_directory))
+    # self.confirmation_messagebox.close()
 
     # Close application
     def close_application(self):

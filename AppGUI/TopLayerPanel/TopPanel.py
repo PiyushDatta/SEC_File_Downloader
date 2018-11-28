@@ -1,5 +1,5 @@
-from tkinter import Label, StringVar, Entry, Button, HORIZONTAL
-from tkinter.ttk import Separator
+from tkinter import StringVar, HORIZONTAL, Label
+from tkinter.ttk import Separator, Entry, Button
 
 from AppGUI.TopLayerPanel.TopPanelController import TopPanelController
 import tkinter as tk
@@ -55,9 +55,8 @@ class TopPanel(tk.Frame):
         # Enter button to select the company, calls TopPanelController class to search for this company
         search_company_button = Button(self, text="Search",
                                        command=lambda: self.top_panel_controller.search_for_selected_company(
-                                           search_company_dropdown.get()),
-                                       height=1,
-                                       width=15)
+                                           search_company_dropdown.get()))
+        search_company_button.config(width=15)
         search_company_button.grid(column=2, row=1, padx=10, pady=(0, 5))
 
         # Horizontal line separator, gui design purposes

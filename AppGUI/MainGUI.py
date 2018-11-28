@@ -2,6 +2,7 @@
 import os
 import pickle
 import tkinter as tk
+from tkinter import ttk
 from tkinter import messagebox
 
 from AppComponents.User import CurrentUser
@@ -52,7 +53,7 @@ class MainGUIApp(tk.Tk):
         self.current_company = self.current_user.get_chosen_company()
 
         # Container to hold all our panels/frames
-        container = tk.Frame(self)
+        container = ttk.Frame(self)
         container.grid(sticky="nsew")
         container.grid_rowconfigure(0, weight=1)
         container.grid_columnconfigure(0, weight=1)

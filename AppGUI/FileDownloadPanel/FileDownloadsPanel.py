@@ -1,6 +1,6 @@
 from AppGUI.FileDownloadPanel.FileDownloadsPanelController import DownloadPanelController
 import tkinter as tk
-from tkinter import Button
+from tkinter.ttk import Button
 
 from AppGUI.PopUpWindow import DownloadFileTypeDetailsGUI
 
@@ -22,11 +22,9 @@ class DownloadPanel(tk.Frame):
 
     def show_file_type_download_button(self, file_type, row_num):
         self.search_company_button = Button(self, text="Download " + file_type,
-                                            command=lambda: self.show_file_type_details_gui(file_type),
-                                            height=1,
-                                            width=15)
-        self.search_company_button.config(height=3, width=28)
-        self.search_company_button.grid(row=row_num, sticky='w', padx=(12, 9), pady=(15, 10))
+                                            command=lambda: self.show_file_type_details_gui(file_type))
+        self.search_company_button.config(width=28)
+        self.search_company_button.grid(row=row_num, sticky='w', padx=(12, 9), pady=(10, 10), ipady=20, ipadx=20)
 
     def show_file_type_details_gui(self, file_type):
         if file_type == "any file type":

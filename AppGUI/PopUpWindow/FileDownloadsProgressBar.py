@@ -1,6 +1,7 @@
 import queue
 import threading
 import time
+import sys, io
 import tkinter as tk
 from tkinter import Label, messagebox, HORIZONTAL, CENTER, LEFT
 from tkinter.ttk import Progressbar
@@ -29,6 +30,8 @@ class DownloadsProgressBar(tk.Tk):
         self.downloads_panel_controller = downloads_panels_controller
 
         self.progress_bar = None
+        self.progress_bar_percent = None
+        self.progress_bar_text = None
 
         self.prior_to_date = prior_to_date
         self.file_type = file_type
@@ -38,6 +41,8 @@ class DownloadsProgressBar(tk.Tk):
         self.return_queue = queue.Queue()
 
         self.show_progress_bar()
+        self.show_progress_bar_percent()
+        self.show_progress_bar_text()
         self.show_file_details()
         self.run_progress_bar()
 
@@ -54,8 +59,16 @@ class DownloadsProgressBar(tk.Tk):
 
     def show_progress_bar(self):
         self.progress_bar = Progressbar(self, orient=HORIZONTAL, length=500, mode='determinate')
-        self.progress_bar.grid(row=3, column=1, sticky="w", pady=(20, 0), padx=(20, 0))
+        self.progress_bar.grid(row=4, column=1, sticky="w", pady=(10, 0), padx=(20, 0))
         self.progress_bar.start()
+
+    def show_progress_bar_percent(self):
+        self.progress_bar_percent = Label(self, text="0%", font=("Helvetica", 12))
+        self.progress_bar_percent.grid(row=3, column=1, sticky="nsew", pady=(20, 0))
+
+    def show_progress_bar_text(self):
+        self.progress_bar_text = Label(self, text="Getting files...", font=("Helvetica", 12))
+        self.progress_bar_text.grid(row=5, column=1, sticky="nsew", pady=(10, 0), padx=(5, 0))
 
     def run_progress_bar(self):
         # Show our progress bar
@@ -74,6 +87,7 @@ class DownloadsProgressBar(tk.Tk):
         t1.join()
 
         # Update again so we don't lose our progress bar
+        self.progress_bar['value'] = 0
         self.progress_bar.update()
 
         # Get the html file urls and file names as a dict
@@ -81,20 +95,31 @@ class DownloadsProgressBar(tk.Tk):
 
         # Set our progress bar max to the length of the results, so we can evenly step/progress the bar
         # by equal portions in our for loop in the next line
-        self.progress_bar['maximum'] = len(results) + 1
+        self.progress_bar['maximum'] = len(results.items()) + 1
 
         # Loop over the key (file name) and value (url) of the dict results.
         # During the for loop, start our second thread for downloads_panel_controller and
         # also progress our progress bar by 1 each time.
-        for key, value in results.items():
+        progress_percent_count = 1
+
+        for key, value in iter(results.items()):
             t2 = threading.Thread(target=self.downloads_panel_controller.download_one_file,
                                   args=(value, key,))
             t2.start()
             t2.join()
-            self.progress_bar.step(1 / len(results))
+            # stdout = sys.stdout
+            # sys.stdout = io.StringIO()
+            # output = sys.stdout.getvalue()
+            # sys.stdout = stdout
+            # self.progress_bar_text['text'] = output
+            self.progress_bar.step(1 / len(results.items()))
+            self.progress_bar_percent['text'] = "{0:.0%}".format(progress_percent_count / len(results.items()))
             self.progress_bar.update()
+            progress_percent_count += 1
 
         # Update our progress bar with value of max to show we're done
+        self.progress_bar_percent['text'] = "100%"
+        self.progress_bar_text['text'] = "Almost done, please wait."
         self.progress_bar['value'] = self.progress_bar['maximum']
         self.progress_bar.update()
         self.progress_bar.stop()
