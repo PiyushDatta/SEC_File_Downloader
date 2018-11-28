@@ -5,7 +5,8 @@ from AppGUI.PopUpWindow.FileDownloadsProgressBar import DownloadsProgressBar
 
 
 class FileTypeDetailsGUI(tk.Tk):
-    def __init__(self, downloads_panels_controller, window_title, window_width, window_length, icon_path):
+    def __init__(self, downloads_panels_controller, window_title, window_width, window_length, icon_path,
+                 chosen_file_type):
         # Window settings
         tk.Tk.__init__(self)
         self.title(window_title)
@@ -28,14 +29,17 @@ class FileTypeDetailsGUI(tk.Tk):
 
         self.prior_to_date = None
 
-        self.file_type = None
+        self.file_type = chosen_file_type
 
         self.file_count = None
 
         self.ret_list = None
 
         self.prior_to_date_widget()
-        self.file_type_widget()
+
+        if not self.file_type:
+            self.file_type_widget()
+
         self.file_count_widget()
         self.confirmation_button()
 

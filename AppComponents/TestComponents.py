@@ -22,152 +22,75 @@ import PyQt4
 import sys
 
 
-def test_function(company_name, cik_name):
-    cik_url = "https://www.sec.gov/cgi-bin/browse-edgar?CIK=" + str(
-            company_name) + "&owner=exclude&action=getcompany"
-    company = None
-    cik_key = None
-
-    # company_url = "https://www.sec.gov/cgi-bin/browse-edgar?company=" + str(
-    #     company_name) + "&owner=exclude&action=getcompany"
-    print(cik_url)
-    req = Request(cik_url)
-    # req = Request(company_url)
-    html_page = urlopen(req).read()
-    soup = BeautifulSoup(html_page, features="lxml")
-    links = soup.find_all("span", {"class": "companyName"})
-
-    if len(links) is 0:
-        return
-
-    company = str(links[0].text.split("CIK#:")[0]).strip()
-    cik_key = str(links[0].text.split("CIK#:")[1]).strip().split(" ", 1)[0]
-    print(company)
-    print(cik_key)
-
-
-# https://www.sec.gov/cgi-bin/viewer?action=
-# view&cik=320193&accession_number=0001628280-17-004790&xbrl_type=v
-
-# documentsbutton
-
-# https://www.sec.gov/Archives/edgar/data/320193/000032019318000100/0000320193-18-000100-index.htm
-# 2016-06-25
-# https://www.sec.gov/Archives/edgar/data/320193/000162828016017809/0001628280-16-017809-index.htm
-def get_entry_text(company_code, cik_key, prior_to, count):
-    # generate the url to crawl
+def test_function(company_name, cik_key, file_type, prior_to, count):
+    # Generate the url to crawl
     base_url = "http://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=" + str(
-        cik_key) + "&type=10-Q&dateb=" + str(prior_to) + "&owner=exclude&output=xml&count=" + str(count)
+        cik_key) + "&type=" + str(file_type) + "&dateb=" + str(prior_to) + "&owner=exclude&output=xml&count=" + str(
+        count)
 
-    check_url = "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000320193&type=10-Q&dateb=20180101" \
-                "&owner=exclude&count=10 "
+    print("Base url we are trying to scrape for file types: " + base_url)
 
-    c = test_fun(check_url, "/Archives/edgar/data/")
+    # Where the links to the htm files that need to be translated into pdf will go
     res = []
 
-    for link in c:
-        res.append(test_fun("https://www.sec.gov" + link, "/Archives/edgar/data/", count=1))
+    # Get links to type of files for company
+    archives_data_links = get_file_type_htm_links(base_url, "filinghref", int(count))
 
-    checker = "https://www.sec.gov" + res[0]
-    # current_dir = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
-    # wkhtmltopdf_config_file = path.join(current_dir, "wkhtmltopdf\\bin\\wkhtmltopdf.exe")
-    # pdfkit.configuration(wkhtmltopdf=wkhtmltopdf_config_file)
-    # pdf = weasyprint.HTML(checker).write_pdf()
-    # pdfkit.from_url(checker, 'check_report.pdf')
-    # with (os.path.join('/path/to/Documents', 'testing.pdf'), 'w') as file:
-    #     file.write(pdf)
-    # for data in c:
-    #     if data.startswith("/Archives/edgar/data/"):
-    #         new_url = "https://www.sec.gov" + data
-    #         new_req = Request(check_url)
-    #         new_html_page = urlopen(new_req)
+    # Get the actual htm of the type of file for the company
 
-    # print(data)
-    # if data.startswith('<a href="/Archives/edgar/data/"'):
-    #     print(data)
+    # archives_data_links = ['https://www.sec.gov/Archives/edgar/data/320193/000119312514277160/d740164d10q.htm', 'https://www.sec.gov/Archives/edgar/data/320193/000119312514277160/d740164dex311.htm', 'https://www.sec.gov/Archives/edgar/data/320193/000119312514277160/d740164dex312.htm', 'https://www.sec.gov/Archives/edgar/data/320193/000119312514277160/d740164dex321.htm', 'https://www.sec.gov/Archives/edgar/data/320193/000119312514277160/0001193125-14-277160.txt', 'https://www.sec.gov/Archives/edgar/data/320193/000119312514277160/aapl-20140628.xml', 'https://www.sec.gov/Archives/edgar/data/320193/000119312514277160/aapl-20140628.xsd', 'https://www.sec.gov/Archives/edgar/data/320193/000119312514277160/aapl-20140628_cal.xml', 'https://www.sec.gov/Archives/edgar/data/320193/000119312514277160/aapl-20140628_def.xml', 'https://www.sec.gov/Archives/edgar/data/320193/000119312514277160/aapl-20140628_lab.xml']
+    # res = []
+    for link in archives_data_links:
+        res.append(get_file_type_htm_links(link, "a", int(count)))
 
-    # print("Successfully downloaded all the files")
+    # Translate each htm into pdf and save it to an Annual Reports folder
+    ret_dict = {}
+    for html_link in res:
+        req_file_type = html_link[0]
+        new_pdf_file_name = "\\" + req_file_type.rsplit('/', 1)[-1].rsplit('.', 1)[0] + ".pdf"
+        ret_dict[new_pdf_file_name] = req_file_type
+        # self.html_to_pdf_directly(html_link,
+        #                           self.current_directory,
+        #                           company_name.replace(" ", ""),
+        #                           file_type,
+        #                           new_pdf_file_name)
 
-    html_to_pdf_directly(checker)
+    print(ret_dict)
+    print("Put file links into dict!")
+    return ret_dict
 
-
-def html_to_pdf_directly(request):
-    path = os.path.abspath(os.path.join(os.getcwd(), os.pardir)) + "\\wkhtmltopdf\\bin\\wkhtmltopdf.exe"
-    config = pdfkit.configuration(wkhtmltopdf=path)
-    pdfkit.from_url(request, 'out.pdf', configuration=config)
-
-
-def test_fun(url, href_link, count=0):
+def get_file_type_htm_links(url, find_all_seq, count):
+    # Get our url and open it with library BeautifulSoup
     req = Request(url)
     html_page = urlopen(req)
-    soup = BeautifulSoup(html_page)
-    c = []
-    ret = []
+    soup = BeautifulSoup(html_page, features="lxml")
 
-    for link in soup.findAll("a"):
-        c.append(link.get('href'))
+    # Initialize 2 lists, since we'll have to first get all the links, then get only the amount of links asked by
+    #  user. This amount is given by parameter 'count'
+    href_list = []
+    file_link_list = []
+    # Get all the links to file type
+    for link in soup.findAll(find_all_seq):
+        if find_all_seq is "a":
+            if link.get('href').startswith("/Archives/edgar/data/"):
+                href_list.append("https://www.sec.gov" + link.get('href'))
+        else:
+            href_list.append(link.text)
 
-    for data in c:
-        if data.startswith("/Archives/edgar/data/"):
-            ret.append(data)
+    # Get only the amount of links that the user asks for, dictated by parameter 'count'
+    for data in href_list:
+        if count is 0:
+            break
+        file_link_list.append(data)
+        count -= 1
 
-    if count is 1:
-        return ret[0]
-    else:
-        return ret
-
-
-def create_document_list(data):
-    # parse fetched data using beatifulsoup
-    soup = BeautifulSoup(data)
-    # store the link in the list
-    link_list = list()
-
-    # If the link is .htm convert it to .html
-    for link in soup.find_all('filinghref'):
-        url = link.string
-        if link.string.split(".")[len(link.string.split(".")) - 1] == "htm":
-            url += "l"
-        link_list.append(url)
-    link_list_final = link_list
-
-    print("Number of files to download {0}".format(len(link_list_final)))
-    print("Starting download....")
-
-    # List of url to the text documents
-    doc_list = list()
-    # List of document names
-    doc_name_list = list()
-
-    # Get all the doc
-    for k in range(len(link_list_final)):
-        required_url = link_list_final[k].replace('-index.html', '')
-        txtdoc = required_url + ".txt"
-        docname = txtdoc.split("/")[-1]
-        doc_list.append(txtdoc)
-        doc_name_list.append(docname)
-    return doc_list, doc_name_list
-
-
-def save_in_directory(company_code, cik, priorto, doc_list, doc_name_list, filing_type):
-    # Save every text document into its respective folder
-    global filehandle
-    for j in range(len(doc_list)):
-        base_url = doc_list[j]
-        r = requests.get(base_url)
-        data = r.text
-        path = os.path.join(os.getcwd(), 'AnnualReports')
-        try:
-            filehandle = open(path, 'ab')
-        except IOError:
-            print("Unable to write to file " + path)
-            # sys.exit('Unable to write to file ' + path)
-
-        filehandle.write(data.encode('ascii', 'ignore'))
+    return file_link_list
 
 
 if __name__ == '__main__':
     # APPLE INC
     # pisa.showLogging()
     # get_entry_text("APPLE INC", "0000320193", 20180101, 1)
-    test_function("APPLE+INC", "0000320193")
+    # base url for apple:
+    # https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000320193&type=10-Q&dateb=20180101&owner=exclude&output=xml&count=10
+    test_function("APPLE+INC", "0000320193", "10-Q", "20180101", "10")

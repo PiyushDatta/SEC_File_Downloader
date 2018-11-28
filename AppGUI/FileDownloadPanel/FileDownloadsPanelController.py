@@ -51,8 +51,6 @@ class DownloadPanelController:
         self._sec_file_downloader = FileDownloader(self._current_directory, self._current_company)
 
         requested_files = self._sec_file_downloader.get_company_file_type(
-            self._current_company.get_chosen_company_name(),
-            self._current_company.get_chosen_company_cik_key(),
             self._file_type,
             self._prior_to_date,
             count=self._file_count)

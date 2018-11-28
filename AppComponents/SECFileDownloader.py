@@ -5,19 +5,16 @@ Currently only gets 10ks (Annual reports).
 
 # Lib to obtain data from url
 
-import argparse
 import os
+import sys
+from os import path
+from urllib.request import urlopen, Request
 
 import pdfkit
 from bs4 import BeautifulSoup
-from os import path, getcwd, makedirs
-import errno
-import requests
-import sys
-from urllib.request import urlopen, Request
+
 
 # Get methods from SQL db file
-from AppComponents import SEC_sql_database as my_sql
 
 
 class FileDownloader:
@@ -25,79 +22,27 @@ class FileDownloader:
     def __init__(self, current_dir, selected_company):
 
         # Current site for CIK list (by SEC) as of June 23rd, 2017
+        # Note used, but good to have for the future
         self.sec_cik_url = 'https://www.sec.gov/Archives/edgar/cik-lookup-data.txt'
 
         # Current directory to save files into
         self.current_directory = current_dir
 
         # Config file
-        parent_path = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
-        self.wkhtmltopdf_config_file = path.join(parent_path, "wkhtmltopdf\\bin\\wkhtmltopdf.exe")
+        self._parent_path = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
+        self.wkhtmltopdf_config_file = path.join(self._parent_path, "wkhtmltopdf\\bin\\wkhtmltopdf.exe")
 
         # Variables to call/open the files
-        self.download_sec_file_counter = 1
-        # our_cik_txt = 'CIK_List.txt'
-        # our_cik_csv = 'CIK_List.csv'
         self.company = selected_company
-        # self.company = selected_company.get_chosen_company_cik_key()
-
-        # Annual reports folder
-        self.annual_report_folder = path.join(current_dir, 'AnnualReports')
-        if not path.exists(self.annual_report_folder):
-            try:
-                makedirs(self.annual_report_folder)
-            except OSError as exception:
-                if exception.errno != errno.EEXIST:
-                    raise
 
         # Current platform
-        self.current_platform = self.get_platform()
+        self.current_platform = get_platform()
 
-    def get_platform(self):
-        platforms = {
-            'linux1': 'Linux',
-            'linux2': 'Linux',
-            'darwin': 'OS X',
-            'win32': 'Windows'
-        }
-        if sys.platform not in platforms:
-            return 'Other'
+    def set_current_directory(self, new_dir):
+        self.current_directory = new_dir
 
-        return platforms[sys.platform]
-
-    def get_company_file_type(self, company_name, cik_key, file_type, prior_to, count=10):
-        # Generate the url to crawl
-        base_url = "http://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=" + str(
-            cik_key) + "&type=" + str(file_type) + "&dateb=" + str(prior_to) + "&owner=exclude&output=xml&count=" + str(
-            count)
-
-        print("Base url we are trying to scrape for file types: " + base_url)
-
-        # Where the links to the htm files that need to be translated into pdf will go
-        res = []
-
-        # Get links to type of files for company
-        archives_data_links = self.get_file_type_htm_links(base_url, "filinghref", int(count))
-
-        # Get the actual htm of the type of file for the company
-        for link in archives_data_links:
-            res = self.get_file_type_htm_links(link, "a", int(count))
-
-        # Translate each htm into pdf and save it to an Annual Reports folder
-        ret_dict = {}
-        for html_link in res:
-            new_pdf_file_name = "\\" + html_link.rsplit('/', 1)[-1].rsplit('.', 1)[0] + ".pdf"
-            ret_dict[new_pdf_file_name] = html_link
-            # self.html_to_pdf_directly(html_link,
-            #                           self.current_directory,
-            #                           company_name.replace(" ", ""),
-            #                           file_type,
-            #                           new_pdf_file_name)
-
-        print("Put file links into dict!")
-        return ret_dict
-        # print()
-        # print("Printed all " + file_type + " for: " + company_name + "!")
+    def set_current_company(self, new_company):
+        self.company = new_company
 
     def html_to_pdf_directly(self, request, parent_path, company_name, file_type, pdf_file_name):
         # Config path to wkhtmltopdf, this exe file is needed for pdfkit
@@ -134,36 +79,76 @@ class FileDownloader:
         # Get the url link to the file type and convert it into pdf
         pdfkit.from_url(request, type_path + pdf_file_name, configuration=config)
 
-    def get_file_type_htm_links(self, url, find_all_seq, count):
-        # Get our url and open it with library BeautifulSoup
-        req = Request(url)
-        html_page = urlopen(req)
-        soup = BeautifulSoup(html_page, features="lxml")
+    def get_company_file_type(self, file_type, prior_to, count=10):
 
-        # Initialize 2 lists, since we'll have to first get all the links, then get only the amount of links asked by
-        #  user. This amount is given by parameter 'count'
-        href_list = []
-        file_link_list = []
+        company_name = self.company.get_chosen_company_name()
+        cik_key = self.company.get_chosen_company_cik_key()
 
-        # Get all the links to file type
-        for link in soup.findAll(find_all_seq):
-            if find_all_seq is "a":
-                if link.get('href').startswith("/Archives/edgar/data/"):
-                    href_list.append("https://www.sec.gov" + link.get('href'))
-            else:
-                href_list.append(link.text)
+        # Generate the url to crawl
+        base_url = "http://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=" + str(
+            cik_key) + "&type=" + str(file_type) + "&dateb=" + str(prior_to) + "&owner=exclude&output=xml&count=" + str(
+            count)
 
-        # Get only the amount of links that the user asks for, dictated by parameter 'count'
-        for data in href_list:
-            if count is 0:
-                break
-            file_link_list.append(data)
-            count -= 1
+        print("Base url we are trying to scrape for file types: " + base_url)
 
-        return file_link_list
+        # Where the links to the htm files that need to be translated into pdf will go
+        res = []
 
-    def set_current_directory(self, new_dir):
-        self.current_directory = new_dir
+        # Get links to type of files for company
+        archives_data_links = get_file_type_htm_links(base_url, "filinghref", int(count))
 
-    def set_current_company(self, new_company):
-        self.company = new_company
+        # Get the actual htm of the type of file for the company
+        for link in archives_data_links:
+            res.append(get_file_type_htm_links(link, "a", int(count)))
+
+        # Translate each htm into pdf and save it to an Annual Reports folder
+        ret_dict = {}
+        for html_link in res:
+            req_file_type = html_link[0]
+            new_pdf_file_name = "\\" + req_file_type.rsplit('/', 1)[-1].rsplit('.', 1)[0] + ".pdf"
+            ret_dict[new_pdf_file_name] = req_file_type
+
+        print("Put file links into dict!")
+        return ret_dict
+
+
+def get_file_type_htm_links(url, find_all_seq, count):
+    # Get our url and open it with library BeautifulSoup
+    req = Request(url)
+    html_page = urlopen(req)
+    soup = BeautifulSoup(html_page, features="lxml")
+
+    # Initialize 2 lists, since we'll have to first get all the links, then get only the amount of links asked by
+    #  user. This amount is given by parameter 'count'
+    href_list = []
+    file_link_list = []
+
+    # Get all the links to file type
+    for link in soup.findAll(find_all_seq):
+        if find_all_seq is "a":
+            if link.get('href').startswith("/Archives/edgar/data/"):
+                href_list.append("https://www.sec.gov" + link.get('href'))
+        else:
+            href_list.append(link.text)
+
+    # Get only the amount of links that the user asks for, dictated by parameter 'count'
+    for data in href_list:
+        if count is 0:
+            break
+        file_link_list.append(data)
+        count -= 1
+
+    return file_link_list
+
+
+def get_platform():
+    platforms = {
+        'linux1': 'Linux',
+        'linux2': 'Linux',
+        'darwin': 'OS X',
+        'win32': 'Windows'
+    }
+    if sys.platform not in platforms:
+        return 'Other'
+
+    return platforms[sys.platform]

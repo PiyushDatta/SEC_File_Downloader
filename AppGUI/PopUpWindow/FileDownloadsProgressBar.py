@@ -73,12 +73,15 @@ class DownloadsProgressBar(tk.Tk):
         t1.start()
         t1.join()
 
+        # Update again so we don't lose our progress bar
+        self.progress_bar.update()
+
         # Get the html file urls and file names as a dict
         results = self.return_queue.get()
 
         # Set our progress bar max to the length of the results, so we can evenly step/progress the bar
         # by equal portions in our for loop in the next line
-        self.progress_bar['maximum'] = len(results)
+        self.progress_bar['maximum'] = len(results) + 1
 
         # Loop over the key (file name) and value (url) of the dict results.
         # During the for loop, start our second thread for downloads_panel_controller and
@@ -94,13 +97,14 @@ class DownloadsProgressBar(tk.Tk):
         # Update our progress bar with value of max to show we're done
         self.progress_bar['value'] = self.progress_bar['maximum']
         self.progress_bar.update()
+        self.progress_bar.stop()
 
         # Show our confirmation of download dialog
         self.show_download_confirmation_dialog()
 
     def show_download_confirmation_dialog(self):
-        messagebox.showinfo(title="Download Status", message="All files downloaded!")
         self.close_application()
+        messagebox.showinfo(title="Download Status", message="All files downloaded!")
 
     # Close application
     def close_application(self):
