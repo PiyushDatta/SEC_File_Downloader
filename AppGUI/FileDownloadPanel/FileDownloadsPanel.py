@@ -17,7 +17,7 @@ class DownloadPanel(tk.Frame):
         self.show_file_type_download_button("10-Q", row_count)
         self.show_file_type_download_button("10-K", row_count + 1)
         self.show_file_type_download_button("8-K", row_count + 2)
-        self.show_file_type_download_button("DEF", row_count + 3)
+        self.show_file_type_download_button("DEF 14A", row_count + 3)
         self.show_file_type_download_button("any file type", row_count + 4)
 
     def show_file_type_download_button(self, file_type, row_num):
@@ -31,6 +31,9 @@ class DownloadPanel(tk.Frame):
     def show_file_type_details_gui(self, file_type):
         if file_type == "any file type":
             file_type = None
+
+        if file_type == "DEF 14A":
+            file_type = "DEF"
 
         self.file_type_details_gui = DownloadFileTypeDetailsGUI.FileTypeDetailsGUI(
             downloads_panels_controller=self.downloads_panel_controller,

@@ -87,8 +87,12 @@ class FileTypeDetailsGUI(tk.Tk):
 
     def send_to_progress_bar(self):
         self.close_application()
-        DownloadsProgressBar(self.downloads_panel_controller, "Download Progress", 550, 150,
-                             self.iconbitmap, self.prior_to_date.get(), self.file_type.get(), self.file_count.get())
+        if isinstance(self.file_type, str):
+            DownloadsProgressBar(self.downloads_panel_controller, "Download Progress", 550, 150,
+                                 self.iconbitmap, self.prior_to_date.get(), self.file_type, self.file_count.get())
+        else:
+            DownloadsProgressBar(self.downloads_panel_controller, "Download Progress", 550, 150,
+                                 self.iconbitmap, self.prior_to_date.get(), self.file_type.get(), self.file_count.get())
 
     # Close application
     def close_application(self):
