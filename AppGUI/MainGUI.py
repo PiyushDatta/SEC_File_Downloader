@@ -162,7 +162,7 @@ class MainGUIApp(tk.Tk):
 
 
 def main():
-    main_window = MainGUIApp("SEC Edgar File Downloader", 1000, 600)
+    main_window = MainGUIApp(window_title="SEC Edgar File Downloader", window_width=975, window_length=600)
     main_window.mainloop()
 
 

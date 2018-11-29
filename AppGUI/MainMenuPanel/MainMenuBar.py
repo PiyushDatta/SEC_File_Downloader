@@ -39,16 +39,10 @@ class MainMenu(tk.Menu):
 
     def show_change_directory_gui(self):
         # Initialize ChangeDirectoryGUI if user wants to open that window
-        change_directory_dialog = ChangeDirectoryGUI.ChangeDirectoryGUI(directory_observer=self.controller,
+        change_directory_dialog = ChangeDirectoryGUI.ChangeDirectoryGUI(menu_controller=self.menu_controller,
                                                                         window_title="Change Directory",
-                                                                        window_width=400, window_length=250,
+                                                                        window_width=700, window_length=150,
                                                                         icon_path=self.icon)
 
     def get_controller(self):
         return self.menu_controller
-
-    # def close_application(self):
-    #     if messagebox.askokcancel("Quit", "Do you want to quit?"):
-    #         print("Saving and closing application.")
-    #         self.menu_controller.save_user_details()
-    #         return self.controller.close_application()

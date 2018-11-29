@@ -1,74 +1,69 @@
 import math
+import os
 import sys
-import tkinter as root
-
+import tkinter as tk
+from tkinter import messagebox, StringVar
+from tkinter.ttk import Button, Label, Entry
 from AppGUI import MainGUI
 from Observers import DirectoryObserver
 
 
-class ChangeDirectoryGUI:
-    def __init__(self, directory_observer, window_title, window_width, window_length, icon_path):
+class ChangeDirectoryGUI(tk.Toplevel):
+    def __init__(self, menu_controller, window_title, window_width, window_length, icon_path, **kw):
         # Window settings
-        self.window = root.Tk()
-        self.window.title(window_title)
+        tk.Toplevel.__init__(self)
+        self.title(window_title)
 
-        self.window.iconbitmap(icon_path)
+        self.iconbitmap(icon_path)
 
         # get screen width and height
-        ws = self.window.winfo_screenwidth()
-        hs = self.window.winfo_screenheight()
+        ws = self.winfo_screenwidth()
+        hs = self.winfo_screenheight()
 
         # calculate position x, y
         x = (ws / 2) - (window_width / 2)
         y = (hs / 2) - (window_length / 2)
-        self.window.geometry('%dx%d+%d+%d' % (window_width, window_length, x, y))
+        self.geometry('%dx%d+%d+%d' % (window_width, window_length, x, y))
 
-        # Container for putting out buttons in
-        # self.container = QtGui.QWidget()
-        # self.setCentralWidget(self.container)
-        # self.container_lay = QtGui.QVBoxLayout()
-        # self.container.setLayout(self.container_lay)
+        self._menu_controller = menu_controller
+        self._current_directory_text = None
+        self._new_directory_entry = None
+        self._new_directory_entry_input = StringVar()
+        self._confirm_button = None
 
-        # Input
-        # self.le = QtGui.QLineEdit()
-        # self.container_lay.addWidget(self.le)
+        # Show everything
+        self.show_current_directory()
+        self.show_new_directory_entry()
+        self.show_confirm_button()
 
-        # Check the directory button
-        # self.check_btn = QtGui.QPushButton("Check Directory")
-        # self.container_lay.addWidget(self.check_btn)
-        # self.check_btn.clicked.connect(self.print_directory_to_user)
+    def show_current_directory(self):
+        self._current_directory_text = Label(self,
+                                             text="Current directory:" + '        ' + self._menu_controller.get_current_directory(),
+                                             font=("Helvetica", 12))
+        self._current_directory_text.grid(row=1, pady=(10, 0), padx=(5, 0), sticky="w")
 
-        # Enter button
-        # self.enter_btn = QtGui.QPushButton("Enter")
-        # self.container_lay.addWidget(self.enter_btn)
-        # self.enter_btn.clicked.connect(self.save_directory_to_current)
+    def show_new_directory_entry(self):
+        new_input_text = Label(self, text="Enter new directory: ", font=("Helvetica", 12))
+        self._new_directory_entry = Entry(self, width=85, textvariable=self._new_directory_entry_input)
 
-        # Initialize current directory as none then get update from observer
-        self.current_directory = None
+        new_input_text.grid(row=2, column=0, pady=(20, 0), padx=(5, 0), sticky="w")
+        self._new_directory_entry.grid(row=2, column=0, pady=(20, 0), padx=(160, 0))
 
-        # Display buttons and input bar (Qline)
-        # if self.current_directory is None:
-        #     self.container_lay.addWidget(QtGui.QLabel("No current directory set"))
-        # else:
-        #     self.container_lay.addWidget(QtGui.QLabel("Current directory: " + self.current_directory))
+    def show_confirm_button(self):
+        self._confirm_button = Button(self, text="Confirm",
+                                      command=self.show_download_confirmation_dialog)
+        self._confirm_button.config(width=20)
+        self._confirm_button.grid(row=3, pady=(20, 0), padx=(20, 0), ipady=5, ipadx=5)
 
-        # self.container_lay.addWidget(QtGui.QLabel("Directory chosen:"))
-        # self.ans = QtGui.QLabel()
-        # self.container_lay.addWidget(self.ans)
-
-    # Print the directory in the window if the user wants to check what they typed in
-    # def print_directory_to_user(self):
-    # chosen_directory = self.le.text()
-    # self.ans.setText(chosen_directory)
-
-    # Save the inputted directory as the current working directory where are all files are stored
-    # def save_directory_to_current(self):
-    # self._notify_observer()
-    # confirmation_messagebox = QtGui.QMessageBox()
-    # self.confirmation_messagebox.about("Confirmation", "All files will be now saved to: " + str(current_directory))
-    # self.confirmation_messagebox.close()
+    def show_download_confirmation_dialog(self):
+        if os.path.isdir(self._new_directory_entry_input.get()):
+            self._menu_controller.update_current_directory(self._new_directory_entry_input.get())
+            messagebox.showinfo(title="Confirmation", message="Current directory changed!")
+            self.close_application()
+        else:
+            messagebox.showerror(title="Error", message="Directory chosen does not exist")
 
     # Close application
     def close_application(self):
         print("Closing ChangeDirectoryGUI application.")
-        return self.window.destroy
+        return self.destroy()

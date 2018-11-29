@@ -22,12 +22,14 @@ class TopPanelController:
 
     def set_current_directory(self, new_dir):
         self._current_directory = new_dir
+        self._panel.restart_panel()
 
     def get_current_directory(self):
         return self._current_directory
 
     def set_current_company(self, new_comp):
         self._current_company = new_comp
+        self._panel.restart_panel()
 
     def get_current_company(self):
         return self._current_company

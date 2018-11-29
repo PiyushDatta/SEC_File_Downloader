@@ -61,7 +61,7 @@ class TopPanel(tk.Frame):
 
         # Horizontal line separator, gui design purposes
         horizontal_line_sep = Separator(self, orient=HORIZONTAL)
-        horizontal_line_sep.grid(row=4, columnspan=5, sticky="ew")
+        horizontal_line_sep.grid(row=4, columnspan=5, pady=(5, 0), sticky="ew")
 
     def show_current_company_selection(self):
         # Display current company selection
@@ -76,7 +76,7 @@ class TopPanel(tk.Frame):
                                                         font=("Helvetica", 12),
                                                         justify='center')
 
-        self.current_company_selection_text.grid(row=5, padx=(30, 0), pady=10)
+        self.current_company_selection_text.grid(row=5, padx=(200, 0), pady=10)
 
     def restart_panel(self):
         self.refresh_panel()
