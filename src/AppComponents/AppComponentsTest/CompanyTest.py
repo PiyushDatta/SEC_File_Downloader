@@ -1,5 +1,5 @@
 import unittest
-from AppComponents.Company import CurrentCompany
+from src.AppComponents.Company import CurrentCompany
 
 
 class CurrentCompanyTest(unittest.TestCase):
@@ -37,6 +37,7 @@ class CurrentCompanyTest(unittest.TestCase):
         self.company.set_company_cik_key("")
         self.assertEqual(self.company.get_chosen_company_cik_key(), None)
 
+    def main(self):
+        unittest.main()
+# if __name__ == '__main__':
 
-if __name__ == '__main__':
-    unittest.main()
