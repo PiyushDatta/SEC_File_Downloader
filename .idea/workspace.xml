@@ -1,52 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a8e5e45-f3d7-4fe5-8e4d-d5c1effb295e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/SEC_file_downloader.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SEC_file_downloader.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppComponents/Company.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppComponents/SECCompanyList.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppComponents/SECFileDownloader.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppComponents/SEC_sql_database.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppComponents/TestComponents.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppComponents/ThreadingClient.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppComponents/User.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppComponents/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppComponents/pdf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppGUI/AutoCompleteDropdownList.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppGUI/FileDownloadPanel/FileDownloadsPanel.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppGUI/FileDownloadPanel/FileDownloadsPanelController.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppGUI/FileDownloadPanel/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppGUI/MainGUI.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppGUI/MainGUI.spec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppGUI/MainGUIActions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppGUI/MainMenuPanel/MainMenuBar.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppGUI/MainMenuPanel/MainMenuBarController.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppGUI/MainMenuPanel/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppGUI/PopUpWindow/ChangeDirectoryGUI.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppGUI/PopUpWindow/DownloadFileTypeDetailsGUI.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppGUI/PopUpWindow/FileDownloadsProgressBar.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppGUI/PopUpWindow/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppGUI/SEFD_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppGUI/SEFD_logo_icon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppGUI/TopLayerPanel/TopPanel.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppGUI/TopLayerPanel/TopPanelController.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppGUI/TopLayerPanel/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppGUI/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppGUI/sec_info.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Archive/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Archive/company_information.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Archive/pdf_file_scraper.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentUser.svc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Observers/CompanyObserver.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Observers/DirectoryObserver.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Observers/FileTypeDetailsObserver.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Observers/ObserverInterface.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Observers/__init__.py" beforeDir="false" />
-    </list>
+    <list default="true" id="9a8e5e45-f3d7-4fe5-8e4d-d5c1effb295e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
