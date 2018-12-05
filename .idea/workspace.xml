@@ -1,14 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c74ea74-ebe4-417d-a87d-4c9a0737a091" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppGUI/MainGUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppGUI/MainGUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppGUI/MainMenuPanel/MainMenuBar.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppGUI/MainMenuPanel/MainMenuBar.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppGUI/PopUpWindow/ChangeDirectoryGUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppGUI/PopUpWindow/ChangeDirectoryGUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppGUI/TopLayerPanel/TopPanel.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppGUI/TopLayerPanel/TopPanel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppGUI/TopLayerPanel/TopPanelController.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppGUI/TopLayerPanel/TopPanelController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CurrentUser.svc" beforeDir="false" afterPath="$PROJECT_DIR$/CurrentUser.svc" afterDir="false" />
+    <list default="true" id="9a8e5e45-f3d7-4fe5-8e4d-d5c1effb295e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/SEC_file_downloader.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SEC_file_downloader.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppComponents/Company.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppComponents/SECCompanyList.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppComponents/SECFileDownloader.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppComponents/SEC_sql_database.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppComponents/TestComponents.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppComponents/ThreadingClient.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppComponents/User.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppComponents/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppComponents/pdf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppGUI/AutoCompleteDropdownList.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppGUI/FileDownloadPanel/FileDownloadsPanel.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppGUI/FileDownloadPanel/FileDownloadsPanelController.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppGUI/FileDownloadPanel/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppGUI/MainGUI.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppGUI/MainGUI.spec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppGUI/MainGUIActions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppGUI/MainMenuPanel/MainMenuBar.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppGUI/MainMenuPanel/MainMenuBarController.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppGUI/MainMenuPanel/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppGUI/PopUpWindow/ChangeDirectoryGUI.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppGUI/PopUpWindow/DownloadFileTypeDetailsGUI.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppGUI/PopUpWindow/FileDownloadsProgressBar.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppGUI/PopUpWindow/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppGUI/SEFD_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppGUI/SEFD_logo_icon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppGUI/TopLayerPanel/TopPanel.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppGUI/TopLayerPanel/TopPanelController.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppGUI/TopLayerPanel/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppGUI/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppGUI/sec_info.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Archive/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Archive/company_information.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Archive/pdf_file_scraper.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CurrentUser.svc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Observers/CompanyObserver.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Observers/DirectoryObserver.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Observers/FileTypeDetailsObserver.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Observers/ObserverInterface.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Observers/__init__.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,192 +53,41 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
-  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="1889690571">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="17" />
-          <entry key="project.open.time.10" value="3" />
-          <entry key="project.open.time.12" value="1" />
-          <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.5" value="5" />
-          <entry key="project.open.time.6" value="4" />
-          <entry key="project.open.time.7" value="2" />
-          <entry key="project.open.time.8" value="2" />
-          <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="19" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="1" />
-          <entry key="py" value="80" />
-          <entry key="spec" value="1" />
-          <entry key="svc" value="1" />
+          <entry key="py" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JavaScript" value="1" />
-          <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="80" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="dummy" value="5" />
-          <entry key="py" value="33584" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="PLAIN_TEXT" value="5" />
-          <entry key="Python" value="33584" />
+          <entry key="Python" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AppGUI/PopUpWindow/ChangeDirectoryGUI.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-                <marker date="1543454992048" expanded="true" signature="248:253" ph="..." />
-                <marker date="1543454992048" expanded="true" signature="1193:1202" ph="..." />
-                <marker date="1543454992048" expanded="true" signature="1666:1675" ph="..." />
-                <marker date="1543454992048" expanded="true" signature="2703:2708" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AppGUI/MainGUI.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1254">
-              <caret line="164" column="87" selection-start-line="164" selection-start-column="87" selection-end-line="164" selection-end-column="87" />
-              <folding>
-                <element signature="e#22#31#0" expanded="true" />
-                <marker date="1543455411560" expanded="true" signature="799:860" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AppGUI/MainGUIActions.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/AppGUI/TopLayerPanel/TopPanel.py">
+        <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="78" column="62" lean-forward="true" selection-start-line="78" selection-start-column="62" selection-end-line="78" selection-end-column="62" />
-              <folding>
-                <element signature="e#0#48#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AppGUI/TopLayerPanel/TopPanelController.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AppGUI/FileDownloadPanel/FileDownloadsPanel.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="28" selection-start-column="28" selection-end-column="28" />
-              <folding>
-                <marker date="1543376953701" expanded="true" signature="233:238" ph="..." />
-              </folding>
+            <state relative-caret-position="168">
+              <caret line="6" column="76" selection-start-line="6" selection-start-column="76" selection-end-line="6" selection-end-column="76" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>ans</find>
-      <find>END</find>
-      <find>COMPANY</find>
-      <find>companyInfo</find>
-      <find>wkhtmltopdf</find>
-      <find>config</find>
-      <find>wkhtmltopdf_config</find>
-      <find>qua</find>
-      <find>Quarter</find>
-      <find>ChangeDirec</find>
-      <find>search_company_text</find>
-      <find>testing_</find>
-      <find>lambda</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/AppGUI/ChangeDirectoryGUI.py" />
-        <option value="$PROJECT_DIR$/pdf_file_scraper.py" />
-        <option value="$PROJECT_DIR$/AppComponents/pdf_file_scraper.py" />
-        <option value="$PROJECT_DIR$/AppGUI/PopUpWindow/AutoCompleteDropdownList.py" />
-        <option value="$PROJECT_DIR$/AppGUI/AutoCompleteDropdownList.py" />
-        <option value="$PROJECT_DIR$/AppComponents/SECCompanyList.py" />
-        <option value="$PROJECT_DIR$/AppComponents/testComponents.py" />
-        <option value="$PROJECT_DIR$/AppComponents/SEC_sql_database.py" />
-        <option value="$PROJECT_DIR$/AppComponents/ThreadingClient.py" />
-        <option value="$PROJECT_DIR$/AppGUI/PopUpWindow/DownloadFileTypeDetails.py" />
-        <option value="$PROJECT_DIR$/AppComponents/Company.py" />
-        <option value="$PROJECT_DIR$/AppComponents/User.py" />
-        <option value="$PROJECT_DIR$/Observers/TopPanelObserver.py" />
-        <option value="$PROJECT_DIR$/Observers/ObserverInterface.py" />
-        <option value="$PROJECT_DIR$/Observers/CompanyObserver.py" />
-        <option value="$PROJECT_DIR$/Observers/DirectoryObserver.py" />
-        <option value="$PROJECT_DIR$/Observers/FileTypeDetailsObserver.py" />
-        <option value="$PROJECT_DIR$/AppGUI/MainMenuBar.py" />
-        <option value="$PROJECT_DIR$/AppGUI/MainMenuPanel/MainMenuBarController.py" />
-        <option value="$PROJECT_DIR$/AppGUI/MainGUIActions.py" />
-        <option value="$PROJECT_DIR$/AppComponents/TestComponents.py" />
-        <option value="$PROJECT_DIR$/AppComponents/SECFileDownloader.py" />
-        <option value="$PROJECT_DIR$/AppGUI/FileDownloadPanel/FileDownloadsPanelController.py" />
-        <option value="$PROJECT_DIR$/AppGUI/FileDownloadPanel/FileDownloadsPanel.py" />
-        <option value="$PROJECT_DIR$/AppGUI/PopUpWindow/DownloadFileTypeDetailsGUI.py" />
-        <option value="$PROJECT_DIR$/AppGUI/PopUpWindow/FileDownloadsProgressBar.py" />
-        <option value="$PROJECT_DIR$/AppGUI/PopUpWindow/ChangeDirectoryGUI.py" />
-        <option value="$PROJECT_DIR$/AppGUI/MainMenuPanel/MainMenuBar.py" />
-        <option value="$PROJECT_DIR$/AppGUI/TopLayerPanel/TopPanelController.py" />
-        <option value="$PROJECT_DIR$/AppGUI/MainGUI.py" />
-        <option value="$PROJECT_DIR$/AppGUI/TopLayerPanel/TopPanel.py" />
-      </list>
-    </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
@@ -209,15 +95,11 @@
     <option name="width" value="1940" />
     <option name="height" value="1060" />
   </component>
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -228,64 +110,14 @@
             <path>
               <item name="SEC_file_downloader" type="b2602c69:ProjectViewProjectNode" />
               <item name="SEC_file_downloader" type="462c0819:PsiDirectoryNode" />
-              <item name="AppComponents" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEC_file_downloader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEC_file_downloader" type="462c0819:PsiDirectoryNode" />
-              <item name="AppGUI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEC_file_downloader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEC_file_downloader" type="462c0819:PsiDirectoryNode" />
-              <item name="AppGUI" type="462c0819:PsiDirectoryNode" />
-              <item name="FileDownloadPanel" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEC_file_downloader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEC_file_downloader" type="462c0819:PsiDirectoryNode" />
-              <item name="AppGUI" type="462c0819:PsiDirectoryNode" />
-              <item name="MainMenuPanel" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEC_file_downloader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEC_file_downloader" type="462c0819:PsiDirectoryNode" />
-              <item name="AppGUI" type="462c0819:PsiDirectoryNode" />
-              <item name="PopUpWindow" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEC_file_downloader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEC_file_downloader" type="462c0819:PsiDirectoryNode" />
-              <item name="AppGUI" type="462c0819:PsiDirectoryNode" />
-              <item name="TopLayerPanel" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEC_file_downloader" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEC_file_downloader" type="462c0819:PsiDirectoryNode" />
-              <item name="Observers" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
-  </component>
-  <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="C:/ProgramData/Anaconda3/envs/masterenvgpu/python.exe" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-  </component>
-  <component name="PyDebuggerOptionsProvider">
-    <option name="mySaveCallSignatures" value="true" />
-    <option name="mySupportQtDebugging" value="false" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\PD\Documents\Piyush\aaaProgramming\SEC_file_downloader\AppGUI\MainMenuPanel" />
-      <recent name="C:\Users\PD\Documents\Piyush\aaaProgramming\SEC_file_downloader\Archive" />
-      <recent name="C:\Users\PD\Documents\Piyush\aaaProgramming\SEC_file_downloader\AppGUI" />
-      <recent name="C:\Users\PD\Documents\Piyush\aaaProgramming\SEC_file_downloader\AppComponents" />
-      <recent name="C:\Users\PD\Documents\Piyush\aaaProgramming\SEC_file_downloader\AppGUI\PopUpWindow" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -299,8 +131,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.MainGUI">
-    <configuration name="ChangeDirectoryGUI" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager">
+    <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="SEC_file_downloader" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -308,11 +140,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/AppGUI/PopUpWindow" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AppGUI/PopUpWindow/ChangeDirectoryGUI.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -321,104 +153,9 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="MainGUI" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="SEC_file_downloader" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/AppGUI" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AppGUI/MainGUI.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="SECCompanyList" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="SEC_file_downloader" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/AppComponents" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AppComponents/SECCompanyList.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="SEC_sql_database" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="SEC_file_downloader" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/AppComponents" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AppComponents/SEC_sql_database.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestComponents" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="SEC_file_downloader" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/AppComponents" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AppComponents/TestComponents.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Python.MainGUI" />
-      <item itemvalue="Python.SECCompanyList" />
-      <item itemvalue="Python.SEC_sql_database" />
-      <item itemvalue="Python.TestComponents" />
-      <item itemvalue="Python.ChangeDirectoryGUI" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.MainGUI" />
-        <item itemvalue="Python.ChangeDirectoryGUI" />
-        <item itemvalue="Python.TestComponents" />
-        <item itemvalue="Python.SEC_sql_database" />
-        <item itemvalue="Python.SECCompanyList" />
+        <item itemvalue="Python.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -427,303 +164,45 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6c74ea74-ebe4-417d-a87d-4c9a0737a091" name="Default" comment="" />
-      <created>1498194655336</created>
+      <changelist id="9a8e5e45-f3d7-4fe5-8e4d-d5c1effb295e" name="Default Changelist" comment="" />
+      <created>1543979706607</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1498194655336</updated>
+      <updated>1543979706607</updated>
     </task>
     <servers />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.14342366" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24983476" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4212766" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49966952" weight="0.39858156" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32907802" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32905984" />
-      <window_info anchor="bottom" id="Python Console" order="8" weight="0.32765958" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50033045" side_tool="true" weight="0.3988604" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32765958" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14342366" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.41985816" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49966952" weight="0.39858156" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32905984" />
-      <window_info anchor="bottom" id="Python Console" order="8" weight="0.32905984" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32905984" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50033045" side_tool="true" weight="0.3988604" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AppGUI/PopUpWindow/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CurrentUser.svc">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/urllib/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppComponents/SECCompanyList.py">
+    <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1036">
-          <caret line="40" column="45" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppComponents/SEC_sql_database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9660">
-          <caret line="359" column="25" selection-start-line="359" selection-start-column="25" selection-end-line="359" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppGUI/MainGUI.spec">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppComponents/pdf.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Archive/company_information.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Archive/pdf_file_scraper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="177" column="27" selection-start-line="177" selection-start-column="27" selection-end-line="177" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppGUI/AutoCompleteDropdownList.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Observers/TopPanelObserver.py" />
-    <entry file="file://$PROJECT_DIR$/Observers/DirectoryObserver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="39" selection-start-column="39" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Observers/FileTypeDetailsObserver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Observers/ObserverInterface.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Observers/CompanyObserver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppComponents/User.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="11" column="64" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppComponents/Company.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="21" column="34" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/tkinter/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="2100" selection-start-line="2100" selection-end-line="2100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/threading.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="915" selection-start-line="915" selection-end-line="915" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppComponents/ThreadingClient.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppComponents/TestComponents.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="48" column="8" selection-start-line="48" selection-start-column="8" selection-end-line="50" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppComponents/SECFileDownloader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="81" column="36" selection-start-line="81" selection-start-column="36" selection-end-line="81" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppGUI/FileDownloadPanel/FileDownloadsPanelController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-            <marker date="1543372092048" expanded="true" signature="1232:1237" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppGUI/FileDownloadPanel/FileDownloadsPanel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="28" selection-start-column="28" selection-end-column="28" />
-          <folding>
-            <marker date="1543376953701" expanded="true" signature="233:238" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppGUI/MainMenuPanel/MainMenuBar.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppGUI/PopUpWindow/FileDownloadsProgressBar.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-            <marker date="1543380081588" expanded="true" signature="2440:2614" ph="..." />
-            <marker date="1543380081588" expanded="true" signature="2647:2656" ph="..." />
-            <marker date="1543380081588" expanded="true" signature="2647:2842" ph="..." />
-            <marker date="1543380081588" expanded="true" signature="2838:2842" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppGUI/PopUpWindow/DownloadFileTypeDetailsGUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="85" column="58" selection-start-line="85" selection-start-column="58" selection-end-line="85" selection-end-column="74" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-            <marker date="1543379651462" expanded="true" signature="2651:2889" ph="..." />
-            <marker date="1543379651462" expanded="true" signature="3499:3503" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppGUI/MainMenuPanel/MainMenuBarController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppGUI/MainGUIActions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppGUI/TopLayerPanel/TopPanelController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppGUI/PopUpWindow/ChangeDirectoryGUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <marker date="1543454992048" expanded="true" signature="248:253" ph="..." />
-            <marker date="1543454992048" expanded="true" signature="1193:1202" ph="..." />
-            <marker date="1543454992048" expanded="true" signature="1666:1675" ph="..." />
-            <marker date="1543454992048" expanded="true" signature="2703:2708" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppGUI/MainGUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1254">
-          <caret line="164" column="87" selection-start-line="164" selection-start-column="87" selection-end-line="164" selection-end-column="87" />
-          <folding>
-            <element signature="e#22#31#0" expanded="true" />
-            <marker date="1543455411560" expanded="true" signature="799:860" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppGUI/TopLayerPanel/TopPanel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="78" column="62" lean-forward="true" selection-start-line="78" selection-start-column="62" selection-end-line="78" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="168">
+          <caret line="6" column="76" selection-start-line="6" selection-start-column="76" selection-end-line="6" selection-end-column="76" />
         </state>
       </provider>
     </entry>
