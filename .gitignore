@@ -1,8 +1,11 @@
-/wkhtmltopdf
-/wkhtmltopdf_config
+/src/wkhtmltopdf
+/src/wkhtmltopdf_config
 .idea
 /__pycache__
+src/CurrentUser.svc
+src/SEFD_logo_icon.ico
 /AnnualReports
 /Backup_db
+/
 
 
